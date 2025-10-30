@@ -63,7 +63,16 @@
             font-size: 60px;
             color: #6a11cb;
         }
-        
+        .fanslee {
+    display: inline-block;
+    width: 150px;          /* 头像宽度 */
+    height: 150px;         /* 头像高度 */
+    background-image: url('../img/fanslee.jpg');
+    background-size: cover;    /* 覆盖整个区域 */
+    background-position: center; /* 居中显示 */
+    background-repeat: no-repeat;
+    border-radius: 50%;        /* 圆形头像 */
+}
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
@@ -240,14 +249,14 @@
             h2 {
                 font-size: 1.5rem;
             }
-        }
+        }       
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="profile-img">
-                <i class="fas fa-user"></i>
+                <i class="fanslee"></i>
             </div>
             <h1>Fans Lee</h1>
             <p class="title">Digital Nomad</p>
