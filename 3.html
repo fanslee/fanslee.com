@@ -69,7 +69,7 @@
             display: inline-block;
             width: 150px;
             height: 150px;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150"><circle cx="75" cy="75" r="75" fill="%236a11cb"/><text x="50%" y="50%" text-anchor="middle" fill="white" font-size="60" dy=".3em">FL</text></svg>');
+            background-image: url('../img/fanslee.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -216,7 +216,7 @@
         .category {
             margin-bottom: 40px;
             width: 100%;
-            max-width: 1200px;
+            max-width: 100%; /* 改为100%以充分利用空间 */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -236,7 +236,7 @@
         .nav-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px; /* 减小间隙以适应10个图标 */
             justify-content: center;
             width: 100%;
         }
@@ -248,7 +248,7 @@
             text-decoration: none;
             color: #20c997;
             transition: all 0.3s ease;
-            padding: 20px 15px;
+            padding: 15px 10px; /* 减小内边距以适应更多图标 */
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.7);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -262,22 +262,22 @@
         }
         
         .nav-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px; /* 减小图标大小以适应更多图标 */
+            height: 45px;
             border-radius: 50%;
             background-color: #f0f0f0;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
+            margin-bottom: 8px; /* 减小间距 */
+            font-size: 1.3rem; /* 减小字体大小 */
             color: #20c997;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
         
         .nav-text {
-            font-size: 0.85rem;
+            font-size: 0.75rem; /* 减小文字大小 */
             text-align: center;
             font-weight: 500;
         }
@@ -311,38 +311,38 @@
         /* 响应式设计 - 桌面版 (10个图标一排) */
         @media (min-width: 1200px) {
             .nav-item {
-                width: calc(10% - 18px); /* 10个图标一排 */
-                min-width: 110px;
+                width: calc(10% - 14px); /* 10个图标一排，调整计算 */
+                min-width: 90px; /* 减小最小宽度 */
             }
             
             .nav-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.8rem;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
             
             .nav-text {
-                font-size: 0.9rem;
+                font-size: 0.75rem;
             }
         }
         
         /* 平板电脑 (5个图标一排) */
         @media (max-width: 1199px) and (min-width: 768px) {
             .nav-item {
-                width: calc(20% - 16px); /* 5个图标一排 */
-                min-width: 130px;
-                padding: 25px 15px;
+                width: calc(20% - 12px); /* 5个图标一排 */
+                min-width: 110px;
+                padding: 20px 10px;
             }
             
             .nav-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 2rem;
-                margin-bottom: 12px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+                margin-bottom: 10px;
             }
             
             .nav-text {
-                font-size: 1rem;
+                font-size: 0.85rem;
             }
         }
         
@@ -378,18 +378,18 @@
             .nav-item {
                 width: calc(50% - 10px); /* 2个图标一排 */
                 min-width: 140px;
-                padding: 30px 15px;
+                padding: 25px 15px;
             }
             
             .nav-icon {
-                width: 80px;
-                height: 80px;
-                font-size: 2.2rem;
-                margin-bottom: 15px;
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+                margin-bottom: 12px;
             }
             
             .nav-text {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .nav-links {
@@ -443,17 +443,17 @@
             
             .nav-item {
                 min-width: 130px;
-                padding: 25px 10px;
+                padding: 20px 10px;
             }
             
             .nav-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 2rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
             }
             
             .nav-text {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             /* 超小屏幕顶部社交链接调整 */
@@ -510,18 +510,67 @@
         
         <div class="navigation">
             <div class="mode-selector">
-                <button class="mode-btn active" data-mode="cross-border">跨境</button>
-                <button class="mode-btn" data-mode="ai">AI</button>
+                <button class="mode-btn active" data-mode="ai">AI</button>               
+                <button class="mode-btn" data-mode="cross-border">跨境</button>
                 <button class="mode-btn" data-mode="crypto">币圈</button>
                 <button class="mode-btn" data-mode="money-making">网赚</button>
                 <button class="mode-btn" data-mode="entertainment">娱乐</button>
                 <button class="mode-btn" data-mode="games">游戏</button>
-                <button class="mode-btn" data-mode="tools">工具</button>
+                <button class="mode-btn" data-mode="tools">常用</button>
             </div>
             
             <div class="mode-panels">
+                <!-- AI导航模式 -->
+                <div class="mode-panel active" id="ai">
+                    <div class="category">
+                        <h2 class="category-title">AI工具与平台</h2>
+                        <div class="nav-links">
+                            <a href="https://chat.openai.com" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-robot"></i></div>
+                                <span class="nav-text">ChatGPT</span>
+                            </a>
+                            <a href="https://www.midjourney.com" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-palette"></i></div>
+                                <span class="nav-text">Midjourney</span>
+                            </a>
+                            <a href="https://www.bard.google.com" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fab fa-google"></i></div>
+                                <span class="nav-text">Google Bard</span>
+                            </a>
+                            <a href="https://www.claude.ai" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-brain"></i></div>
+                                <span class="nav-text">Claude AI</span>
+                            </a>
+                            <a href="https://www.dalle.com" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-image"></i></div>
+                                <span class="nav-text">DALL-E</span>
+                            </a>
+                            <a href="https://www.stability.ai" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-drafting-compass"></i></div>
+                                <span class="nav-text">Stable Diffusion</span>
+                            </a>
+                            <a href="https://www.notion.ai" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-sticky-note"></i></div>
+                                <span class="nav-text">Notion AI</span>
+                            </a>
+                            <a href="https://www.grammarly.com" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-spell-check"></i></div>
+                                <span class="nav-text">Grammarly</span>
+                            </a>
+                            <a href="https://www.copy.ai" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-pen-fancy"></i></div>
+                                <span class="nav-text">Copy.ai</span>
+                            </a>
+                            <a href="https://www.jasper.ai" target="_blank" class="nav-item">
+                                <div class="nav-icon"><i class="fas fa-feather-alt"></i></div>
+                                <span class="nav-text">Jasper AI</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- 跨境电商模式 -->
-                <div class="mode-panel active" id="cross-border">
+                <div class="mode-panel" id="cross-border">
                     <div class="category">
                         <h2 class="category-title">跨境电商平台</h2>
                         <div class="nav-links">
@@ -590,55 +639,6 @@
                             <a href="https://www.ups.com" target="_blank" class="nav-item">
                                 <div class="nav-icon"><i class="fas fa-boxes"></i></div>
                                 <span class="nav-text">UPS</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- AI导航模式 -->
-                <div class="mode-panel" id="ai">
-                    <div class="category">
-                        <h2 class="category-title">AI工具与平台</h2>
-                        <div class="nav-links">
-                            <a href="https://chat.openai.com" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-robot"></i></div>
-                                <span class="nav-text">ChatGPT</span>
-                            </a>
-                            <a href="https://www.midjourney.com" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-palette"></i></div>
-                                <span class="nav-text">Midjourney</span>
-                            </a>
-                            <a href="https://www.bard.google.com" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fab fa-google"></i></div>
-                                <span class="nav-text">Google Bard</span>
-                            </a>
-                            <a href="https://www.claude.ai" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-brain"></i></div>
-                                <span class="nav-text">Claude AI</span>
-                            </a>
-                            <a href="https://www.dalle.com" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-image"></i></div>
-                                <span class="nav-text">DALL-E</span>
-                            </a>
-                            <a href="https://www.stability.ai" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-drafting-compass"></i></div>
-                                <span class="nav-text">Stable Diffusion</span>
-                            </a>
-                            <a href="https://www.notion.ai" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-sticky-note"></i></div>
-                                <span class="nav-text">Notion AI</span>
-                            </a>
-                            <a href="https://www.grammarly.com" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-spell-check"></i></div>
-                                <span class="nav-text">Grammarly</span>
-                            </a>
-                            <a href="https://www.copy.ai" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-pen-fancy"></i></div>
-                                <span class="nav-text">Copy.ai</span>
-                            </a>
-                            <a href="https://www.jasper.ai" target="_blank" class="nav-item">
-                                <div class="nav-icon"><i class="fas fa-feather-alt"></i></div>
-                                <span class="nav-text">Jasper AI</span>
                             </a>
                         </div>
                     </div>
