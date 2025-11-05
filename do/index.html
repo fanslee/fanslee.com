@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fanslee导航 - 全响应式优化版</title>
+    <title>Fanslee导航 - 隐藏滚动条优化版</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
@@ -587,25 +587,17 @@
                 padding: 15px 10px;
                 margin: 0 -10px;
                 -webkit-overflow-scrolling: touch;
-                scrollbar-width: thin;
-                scrollbar-color: #20c997 #f0f0f0;
                 width: calc(100% + 20px);
                 gap: 10px;
+                
+                /* 隐藏滚动条 - 关键代码 */
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none; /* IE and Edge */
             }
             
+            /* 隐藏Webkit浏览器滚动条 */
             .mode-selector::-webkit-scrollbar {
-                height: 6px;
-            }
-            
-            .mode-selector::-webkit-scrollbar-track {
-                background: #f0f0f0;
-                border-radius: 10px;
-                margin: 0 10px;
-            }
-            
-            .mode-selector::-webkit-scrollbar-thumb {
-                background: #20c997;
-                border-radius: 10px;
+                display: none; /* Chrome, Safari, Opera */
             }
             
             .mode-btn {
@@ -638,8 +630,8 @@
             <div class="profile-img">
                 <div class="fanslee"><i class="fas fa-robot"></i></div>
             </div>
-            <h1>DOAI</h1>
-            <p class="title">AI常用网址导航</p>
+            <h1>Fans Lee</h1>
+            <p class="title">Digital Nomad</p>
             <p>精选AI工具与资源，助您提升效率</p>
             <div class="social-links">
                 <a href="https://p-p.fan" target="_blank">
@@ -667,13 +659,13 @@
         
         <div class="navigation">
             <div class="mode-selector">
-                <button class="mode-btn active" data-mode="ai">AI</button>               
-                <button class="mode-btn" data-mode="eb">电商</button>
-                <button class="mode-btn" data-mode="crypto">币圈</button>
-                <button class="mode-btn" data-mode="stocks">美股</button>
-                <button class="mode-btn" data-mode="ent">娱乐</button>
-                <button class="mode-btn" data-mode="games">游戏</button>
-                <button class="mode-btn" data-mode="tools">工具</button>
+                <button class="mode-btn active" data-mode="ai">AI工具</button>               
+                <button class="mode-btn" data-mode="cross-border">跨境电商</button>
+                <button class="mode-btn" data-mode="crypto">币圈交易</button>
+                <button class="mode-btn" data-mode="money-making">网赚项目</button>
+                <button class="mode-btn" data-mode="entertainment">在线娱乐</button>
+                <button class="mode-btn" data-mode="games">游戏下载</button>
+                <button class="mode-btn" data-mode="tools">常用工具</button>
             </div>
             
             <div class="mode-panels">
@@ -732,73 +724,12 @@
                                     <a href="https://www.dalle.com" target="_blank" class="nav-action-link">访问</a>
                                 </div>
                             </div>
-                            <div class="nav-item-container">
-                                <a href="https://www.dalle.com" target="_blank" class="nav-main-link">
-                                    <div class="nav-icon"><i class="fas fa-image"></i></div>
-                                    <span class="nav-text">DALL-E</span>
-                                </a>
-                                <div class="nav-action-links">
-                                    <a href="#" class="nav-action-link">攻略</a>
-                                    <a href="https://www.dalle.com" target="_blank" class="nav-action-link">访问</a>
-                                </div>
-                            </div>
-                            <div class="nav-item-container">
-                                <a href="https://www.dalle.com" target="_blank" class="nav-main-link">
-                                    <div class="nav-icon"><i class="fas fa-image"></i></div>
-                                    <span class="nav-text">DALL-E</span>
-                                </a>
-                                <div class="nav-action-links">
-                                    <a href="#" class="nav-action-link">攻略</a>
-                                    <a href="https://www.dalle.com" target="_blank" class="nav-action-link">访问</a>
-                                </div>
-                            </div>
-                            <div class="nav-item-container">
-                                <a href="https://www.dalle.com" target="_blank" class="nav-main-link">
-                                    <div class="nav-icon"><i class="fas fa-image"></i></div>
-                                    <span class="nav-text">DALL-E</span>
-                                </a>
-                                <div class="nav-action-links">
-                                    <a href="#" class="nav-action-link">攻略</a>
-                                    <a href="https://www.dalle.com" target="_blank" class="nav-action-link">访问</a>
-                                </div>
-                            </div>
-                            <div class="nav-item-container">
-                                <a href="https://www.dalle.com" target="_blank" class="nav-main-link">
-                                    <div class="nav-icon"><i class="fas fa-image"></i></div>
-                                    <span class="nav-text">DALL-E</span>
-                                </a>
-                                <div class="nav-action-links">
-                                    <a href="#" class="nav-action-link">攻略</a>
-                                    <a href="https://www.dalle.com" target="_blank" class="nav-action-link">访问</a>
-                                </div>
-                            </div>
-                            <div class="nav-item-container">
-                                <a href="https://www.dalle.com" target="_blank" class="nav-main-link">
-                                    <div class="nav-icon"><i class="fas fa-image"></i></div>
-                                    <span class="nav-text">DALL-E</span>
-                                </a>
-                                <div class="nav-action-links">
-                                    <a href="#" class="nav-action-link">攻略</a>
-                                    <a href="https://www.dalle.com" target="_blank" class="nav-action-link">访问</a>
-                                </div>
-                            </div>
-                            <div class="nav-item-container">
-                                <a href="https://www.dalle.com" target="_blank" class="nav-main-link">
-                                    <div class="nav-icon"><i class="fas fa-image"></i></div>
-                                    <span class="nav-text">DALL-E</span>
-                                </a>
-                                <div class="nav-action-links">
-                                    <a href="#" class="nav-action-link">攻略</a>
-                                    <a href="https://www.dalle.com" target="_blank" class="nav-action-link">访问</a>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
                 
                 <!-- 跨境电商模式 -->
-                <div class="mode-panel" id="eb">
+                <div class="mode-panel" id="cross-border">
                     <div class="category">
                         <h2 class="category-title">跨境电商平台</h2>
                         <div class="nav-links">
@@ -916,9 +847,9 @@
                 </div>
                 
                 <!-- 其他模式省略以保持代码简洁 -->
-                <div class="mode-panel" id="stocks">
+                <div class="mode-panel" id="money-making">
                     <div class="category">
-                        <h2 class="category-title">美股投资</h2>
+                        <h2 class="category-title">网赚平台</h2>
                         <div class="nav-links">
                             <div class="nav-item-container">
                                 <a href="#" target="_blank" class="nav-main-link">
@@ -934,7 +865,7 @@
                     </div>
                 </div>
                 
-                <div class="mode-panel" id="ent">
+                <div class="mode-panel" id="entertainment">
                     <div class="category">
                         <h2 class="category-title">在线娱乐</h2>
                         <div class="nav-links">
