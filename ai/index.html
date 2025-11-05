@@ -169,21 +169,6 @@
             justify-content: center;
         }
         
-        .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #20c997;
-            transition: all 0.3s ease;
-            padding: 20px 15px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.7);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-            width: 100%;
-        }
-        
         .nav-item-container {
             display: flex;
             flex-direction: column;
@@ -194,6 +179,9 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             padding: 20px 15px;
+            /* 关键修改：添加固定高度和flex布局 */
+            min-height: 180px;
+            justify-content: space-between;
         }
         
         .nav-item-container:hover {
@@ -209,7 +197,8 @@
             text-decoration: none;
             color: #20c997;
             width: 100%;
-            margin-bottom: 10px;
+            /* 关键修改：移除底部边距，由flex布局控制间距 */
+            margin-bottom: 0;
         }
         
         .nav-icon {
@@ -231,30 +220,35 @@
             font-size: 0.85rem;
             text-align: center;
             font-weight: 500;
-            margin-bottom: 8px;
+            /* 关键修改：添加固定高度和文本对齐 */
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
         }
         
         /* 新增的访问和攻略链接样式 */
         .nav-action-links {
             display: flex;
-            gap: 10px;
-            margin-top: 5px;
+            gap: 8px;
+            margin-top: 0; /* 移除上边距，由flex布局控制 */
             width: 100%;
             justify-content: center;
         }
         
         .nav-action-link {
-            font-size: 0.7rem;
-            padding: 4px 10px;
+            font-size: 0.65rem;
+            padding: 4px 8px;
             background-color: #f0f0f0;
-            border-radius: 10px;
+            border-radius: 8px;
             color: #20c997;
             text-decoration: none;
             transition: all 0.2s ease;
             font-weight: 500;
             flex: 1;
             text-align: center;
-            max-width: 60px;
+            max-width: 50px;
         }
         
         .nav-action-link:hover {
@@ -329,7 +323,9 @@
             .nav-item-container {
                 width: calc(10% - 18px); /* 10个图标一排 */
                 min-width: 110px;
-                padding: 25px 15px;
+                padding: 20px 15px;
+                /* 关键修改：PC端固定高度 */
+                min-height: 160px;
             }
             
             .nav-icon {
@@ -340,6 +336,19 @@
             
             .nav-text {
                 font-size: 0.9rem;
+                min-height: 35px; /* PC端调整文本区域高度 */
+            }
+            
+            /* PC端确保访问和攻略链接横排 */
+            .nav-action-links {
+                flex-direction: row;
+                gap: 6px;
+            }
+            
+            .nav-action-link {
+                font-size: 0.6rem;
+                padding: 3px 6px;
+                max-width: 45px;
             }
         }
         
@@ -348,7 +357,9 @@
             .nav-item-container {
                 width: calc(20% - 16px); /* 5个图标一排 */
                 min-width: 130px;
-                padding: 30px 15px;
+                padding: 25px 15px;
+                /* 关键修改：平板端固定高度 */
+                min-height: 180px;
             }
             
             .nav-icon {
@@ -360,11 +371,12 @@
             
             .nav-text {
                 font-size: 1rem;
+                min-height: 45px; /* 平板端调整文本区域高度 */
             }
             
             .nav-action-link {
-                font-size: 0.75rem;
-                padding: 5px 12px;
+                font-size: 0.7rem;
+                padding: 4px 8px;
             }
         }
         
@@ -400,7 +412,9 @@
             .nav-item-container {
                 width: calc(50% - 10px); /* 2个图标一排 */
                 min-width: 140px;
-                padding: 35px 15px;
+                padding: 25px 15px;
+                /* 关键修改：手机端固定高度 */
+                min-height: 180px;
             }
             
             .nav-icon {
@@ -412,6 +426,7 @@
             
             .nav-text {
                 font-size: 1.1rem;
+                min-height: 50px; /* 手机端调整文本区域高度 */
             }
             
             .nav-links {
@@ -419,8 +434,8 @@
             }
             
             .nav-action-link {
-                font-size: 0.8rem;
-                padding: 6px 14px;
+                font-size: 0.75rem;
+                padding: 5px 10px;
             }
             
             /* 手机版顶部社交链接 - 5个一排 */
@@ -472,7 +487,8 @@
             
             .nav-item-container {
                 min-width: 130px;
-                padding: 30px 10px;
+                padding: 20px 10px;
+                min-height: 170px; /* 超小屏幕调整高度 */
             }
             
             .nav-icon {
@@ -483,11 +499,12 @@
             
             .nav-text {
                 font-size: 1rem;
+                min-height: 45px; /* 超小屏幕调整文本区域高度 */
             }
             
             .nav-action-link {
-                font-size: 0.75rem;
-                padding: 5px 10px;
+                font-size: 0.7rem;
+                padding: 4px 8px;
             }
             
             /* 超小屏幕顶部社交链接调整 */
@@ -546,8 +563,8 @@
                             <span class="nav-text">ChatGPT</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://chat.openai.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://chat.openai.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -556,8 +573,8 @@
                             <span class="nav-text">Claude</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://claude.ai" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://claude.ai" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -566,8 +583,8 @@
                             <span class="nav-text">Gemini</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://gemini.google.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://gemini.google.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -576,8 +593,8 @@
                             <span class="nav-text">Midjourney</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.midjourney.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.midjourney.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -586,8 +603,8 @@
                             <span class="nav-text">Stable Diffusion</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://stability.ai" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://stability.ai" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -596,8 +613,8 @@
                             <span class="nav-text">Notion AI</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.notion.so/product/ai" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.notion.so/product/ai" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -606,8 +623,8 @@
                             <span class="nav-text">Perplexity</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.perplexity.ai" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.perplexity.ai" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -616,8 +633,8 @@
                             <span class="nav-text">Copy.ai</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.copy.ai" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.copy.ai" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -626,8 +643,8 @@
                             <span class="nav-text">Jasper</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.jasper.ai" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.jasper.ai" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -636,8 +653,8 @@
                             <span class="nav-text">ElevenLabs</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://elevenlabs.io" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://elevenlabs.io" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                 </div>
@@ -652,8 +669,8 @@
                             <span class="nav-text">DeepLearning.ai</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.deeplearning.ai" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.deeplearning.ai" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -662,8 +679,8 @@
                             <span class="nav-text">Coursera</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.coursera.org" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.coursera.org" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -672,8 +689,8 @@
                             <span class="nav-text">Kaggle</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.kaggle.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.kaggle.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -682,8 +699,8 @@
                             <span class="nav-text">Papers with Code</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://paperswithcode.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://paperswithcode.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -692,8 +709,8 @@
                             <span class="nav-text">Hugging Face</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://huggingface.co" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://huggingface.co" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -702,8 +719,8 @@
                             <span class="nav-text">Fast.ai</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.fast.ai" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.fast.ai" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -712,8 +729,8 @@
                             <span class="nav-text">Udacity</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.udacity.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.udacity.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -722,8 +739,8 @@
                             <span class="nav-text">edX</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.edx.org" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.edx.org" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -732,8 +749,8 @@
                             <span class="nav-text">3Blue1Brown</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.youtube.com/c/3blue1brown" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.youtube.com/c/3blue1brown" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -742,8 +759,8 @@
                             <span class="nav-text">Karpathy</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.youtube.com/c/AndrejKarpathy" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.youtube.com/c/AndrejKarpathy" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                 </div>
@@ -758,8 +775,8 @@
                             <span class="nav-text">Google</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.google.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.google.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -768,8 +785,8 @@
                             <span class="nav-text">GitHub</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://github.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://github.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -778,8 +795,8 @@
                             <span class="nav-text">Stack Overflow</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://stackoverflow.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://stackoverflow.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -788,8 +805,8 @@
                             <span class="nav-text">CodePen</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://codepen.io" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://codepen.io" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -798,8 +815,8 @@
                             <span class="nav-text">Figma</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.figma.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.figma.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -808,8 +825,8 @@
                             <span class="nav-text">Notion</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://www.notion.so" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://www.notion.so" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -818,8 +835,8 @@
                             <span class="nav-text">Trello</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://trello.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://trello.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -828,8 +845,8 @@
                             <span class="nav-text">Slack</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://slack.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://slack.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -838,8 +855,8 @@
                             <span class="nav-text">Discord</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://discord.com" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://discord.com" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                     <div class="nav-item-container">
@@ -848,8 +865,8 @@
                             <span class="nav-text">Zoom</span>
                         </a>
                         <div class="nav-action-links">
-                            <a href="https://zoom.us" target="_blank" class="nav-action-link">访问</a>
                             <a href="#" class="nav-action-link">攻略</a>
+                            <a href="https://zoom.us" target="_blank" class="nav-action-link">访问</a>
                         </div>
                     </div>
                 </div>
