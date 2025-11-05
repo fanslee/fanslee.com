@@ -66,24 +66,22 @@
         }
         .fanslee {
             display: inline-block;
-            width: 150px;          /* 头像宽度 */
-            height: 150px;         /* 头像高度 */
-            background-image: url('../img/fanslee.jpg');
-            background-size: cover;    /* 覆盖整个区域 */
-            background-position: center; /* 居中显示 */
+            width: 150px;
+            height: 150px;
+            background-image: url('https://fanslee.com/img/fanslee.jpg');
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
-            border-radius: 50%;        /* 圆形头像 */
+            border-radius: 50%;
         }
-        .site01, .site02, .site03, .site04, .site05
-        {
+        .nav-icon {
             display: inline-block;
-            width: 40px;          /* 头像宽度 */
-            height: 40px;         /* 头像高度 */
-            background-image: url('../img/site02.png');
-            background-size: cover;    /* 覆盖整个区域 */
-            background-position: center; /* 居中显示 */
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
-            border-radius: 50%;        /* 圆形头像 */
+            border-radius: 50%;
         } 
         .site01 {background-image: url('https://fanslee.com/img/site01.png');}
         .site02 {background-image: url('https://fanslee.com/img/site02.png');}
@@ -105,31 +103,33 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 25px; /* 增加间距以容纳文字 */
+            gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
+            max-width: 100%;
         }
 
         .social-links a {
             color: white;
             background: rgba(255, 255, 255, 0.2);
-            width: 70px; /* 增加宽度以容纳文字 */
-            height: auto; /* 高度自适应 */
-            border-radius: 15px; /* 稍微圆角 */
+            width: 70px;
+            height: auto;
+            border-radius: 15px;
             display: flex;
-            flex-direction: column; /* 垂直排列 */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s ease;
-            padding: 10px 5px; /* 增加内边距 */
+            padding: 10px 5px;
+            flex-shrink: 0;
         }
 
         .social-links a:hover {
             background: rgba(255, 255, 255, 0.3);
-           transform: translateY(-3px);
+            transform: translateY(-3px);
         }
 
-        /* 为每个图标添加对应的文字样式 */
         .social-links .link-text {
             color: white;
             font-size: 0.75rem;
@@ -138,14 +138,10 @@
             font-weight: 500;
             line-height: 1.2;
         }
+        
         .social-links a:hover i {
             transform: scale(1.1);
             transition: transform 0.3s ease;
-        }
-        @media (max-width: 480px) {
-            .social-links .link-text {
-                font-size: 0.7rem;
-            }
         }
         
         .content {
@@ -272,6 +268,15 @@
                 height: 120px;
                 font-size: 50px;
             }
+            
+            .social-links {
+                gap: 10px;
+            }
+            
+            .social-links a {
+                width: 60px;
+                padding: 8px 4px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -287,6 +292,20 @@
             h2 {
                 font-size: 1.5rem;
             }
+            
+            .social-links {
+                gap: 8px;
+                justify-content: center;
+            }
+            
+            .social-links a {
+                width: 55px;
+                padding: 6px 3px;
+            }
+            
+            .social-links .link-text {
+                font-size: 0.7rem;
+            }
         }       
     </style>
 </head>
@@ -299,52 +318,33 @@
             <h1>Fans Lee</h1>
             <p class="title">Digital Nomad</p>
             <p>I'm nobody.</p>
-    <div class="social-links">
-           <a href="https://m.p-p.fun" target="_blank">
-           <i class="site01"></i>
-           <span class="link-text">Music</span>
-           </a>   
-           <a href="https://blog.fanslee.com" target="_blank">
-           <i class="site03"></i>
-           <span class="link-text">Blog</span>
-           </a>
-           <a href="/ad" target="_blank">
-           <i class="site02"></i>
-           <span class="link-text">AD</span>
-           </a>   
-           <a href="/btc" target="_blank">
-           <i class="site04"></i>
-           <span class="link-text">BTC</span>
-           </a>      
-           <a href="/ai" target="_blank">
-           <i class="site05"></i>
-           <span class="link-text">AI</span>
-           </a>            
-    </div>
+            <div class="social-links">
+                <a href="https://m.p-p.fun" target="_blank">
+                    <i class="nav-icon site01"></i>
+                    <span class="link-text">Music</span>
+                </a>   
+                <a href="https://blog.fanslee.com" target="_blank">
+                    <i class="nav-icon site03"></i>
+                    <span class="link-text">Blog</span>
+                </a>
+                <a href="/ad" target="_blank">
+                    <i class="nav-icon site02"></i>
+                    <span class="link-text">AD</span>
+                </a>   
+                <a href="/btc" target="_blank">
+                    <i class="nav-icon site04"></i>
+                    <span class="link-text">BTC</span>
+                </a>      
+                <a href="/ai" target="_blank">
+                    <i class="nav-icon site05"></i>
+                    <span class="link-text">AI</span>
+                </a>            
+            </div>
         </header>
                      
         <div class="contact">
-           
-            <div class="contact-info">
-                <!--<div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span></span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span></span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span></span>
-                </div>
-            </div>-->
             <a href="#" class="btn">do@fasnlee.com</a>
         </div>
-        
-        <!--<footer>
-            <p>fanslee do it！</p>
-        </footer>-->
     </div>
 
     <script>
