@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网赚广告联盟大全</title>
+    <title>常用AI网址导航</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
@@ -180,13 +180,36 @@
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.7);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            width: 100%;
         }
         
-        .nav-item:hover {
+        .nav-item-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            padding: 20px 15px;
+        }
+        
+        .nav-item-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             background: white;
+        }
+        
+        .nav-main-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
             color: #20c997;
+            width: 100%;
+            margin-bottom: 10px;
         }
         
         .nav-icon {
@@ -208,6 +231,36 @@
             font-size: 0.85rem;
             text-align: center;
             font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        /* 新增的访问和攻略链接样式 */
+        .nav-action-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .nav-action-link {
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            color: #20c997;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            flex: 1;
+            text-align: center;
+            max-width: 60px;
+        }
+        
+        .nav-action-link:hover {
+            background-color: #20c997;
+            color: white;
+            transform: translateY(-2px);
         }
         
         .contact {
@@ -273,9 +326,10 @@
         
         /* 响应式设计 - 桌面版 (10个图标一排) */
         @media (min-width: 1200px) {
-            .nav-item {
+            .nav-item-container {
                 width: calc(10% - 18px); /* 10个图标一排 */
                 min-width: 110px;
+                padding: 25px 15px;
             }
             
             .nav-icon {
@@ -291,10 +345,10 @@
         
         /* 平板电脑 (5个图标一排) */
         @media (max-width: 1199px) and (min-width: 768px) {
-            .nav-item {
+            .nav-item-container {
                 width: calc(20% - 16px); /* 5个图标一排 */
                 min-width: 130px;
-                padding: 25px 15px;
+                padding: 30px 15px;
             }
             
             .nav-icon {
@@ -306,6 +360,11 @@
             
             .nav-text {
                 font-size: 1rem;
+            }
+            
+            .nav-action-link {
+                font-size: 0.75rem;
+                padding: 5px 12px;
             }
         }
         
@@ -338,10 +397,10 @@
                 font-size: 1.5rem;
             }
             
-            .nav-item {
+            .nav-item-container {
                 width: calc(50% - 10px); /* 2个图标一排 */
                 min-width: 140px;
-                padding: 30px 15px;
+                padding: 35px 15px;
             }
             
             .nav-icon {
@@ -357,6 +416,11 @@
             
             .nav-links {
                 gap: 15px;
+            }
+            
+            .nav-action-link {
+                font-size: 0.8rem;
+                padding: 6px 14px;
             }
             
             /* 手机版顶部社交链接 - 5个一排 */
@@ -406,9 +470,9 @@
                 font-size: 1.8rem;
             }
             
-            .nav-item {
+            .nav-item-container {
                 min-width: 130px;
-                padding: 25px 10px;
+                padding: 30px 10px;
             }
             
             .nav-icon {
@@ -419,6 +483,11 @@
             
             .nav-text {
                 font-size: 1rem;
+            }
+            
+            .nav-action-link {
+                font-size: 0.75rem;
+                padding: 5px 10px;
             }
             
             /* 超小屏幕顶部社交链接调整 */
@@ -440,10 +509,10 @@
             <div class="profile-img">
                 <i class="fanslee"></i>
             </div>
-            <h1>本页面内容完善ing</h1>
-            <p class="title">互联网广告赚钱项目</p>
-            <p>邀请注册、销售分成、点击广告、展示广告</p>
-    <div class="social-links">
+            <h1>常用AI网址导航</h1>
+            <p class="title">Digital Nomad</p>
+            <p>精选AI工具与资源，助您提升效率</p>
+            <div class="social-links">
                  <a href="https://m.p-p.fun" target="_blank">
                     <div class="social-icon"><i class="fas fa-music"></i></div>
                     <span class="link-text">音乐</span>
@@ -463,477 +532,334 @@
                 <a href="/ai" target="_blank">
                     <div class="social-icon"><i class="fas fa-robot"></i></div>
                     <span class="link-text">AI</span>
-                </a>            
-    </div>
-
+                </a>          
+            </div>
         </header>
         
         <div class="navigation">
             <div class="category">
-                <h2 class="category-title">头部联盟</h2>
+                <h2 class="category-title">AI工具</h2>
                 <div class="nav-links">
-                    <a href="https://www.google.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-google"></i></div>
-                        <span class="nav-text">Google</span>
-                    </a>
-                    <a href="https://github.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-github"></i></div>
-                        <span class="nav-text">GitHub</span>
-                    </a>
-                    <a href="https://stackoverflow.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-stack-overflow"></i></div>
-                        <span class="nav-text">Stack Overflow</span>
-                    </a>
-                    <a href="https://codepen.io" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-codepen"></i></div>
-                        <span class="nav-text">CodePen</span>
-                    </a>
-                    <a href="https://www.figma.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-figma"></i></div>
-                        <span class="nav-text">Figma</span>
-                    </a>
-                    <a href="https://www.notion.so" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-sticky-note"></i></div>
-                        <span class="nav-text">Notion</span>
-                    </a>
-                    <a href="https://trello.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-trello"></i></div>
-                        <span class="nav-text">Trello</span>
-                    </a>
-                    <a href="https://slack.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-slack"></i></div>
-                        <span class="nav-text">Slack</span>
-                    </a>
-                    <a href="https://discord.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-discord"></i></div>
-                        <span class="nav-text">Discord</span>
-                    </a>
-                    <a href="https://zoom.us" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-video"></i></div>
-                        <span class="nav-text">Zoom</span>
-                    </a>
-                </div>
-            </div>
-
-         <div class="navigation">
-            <div class="category">
-                <h2 class="category-title">电商购物</h2>
-                <div class="nav-links">
-                    <a href="https://www.google.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-google"></i></div>
-                        <span class="nav-text">Google</span>
-                    </a>
-                    <a href="https://github.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-github"></i></div>
-                        <span class="nav-text">GitHub</span>
-                    </a>
-                    <a href="https://stackoverflow.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-stack-overflow"></i></div>
-                        <span class="nav-text">Stack Overflow</span>
-                    </a>
-                    <a href="https://codepen.io" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-codepen"></i></div>
-                        <span class="nav-text">CodePen</span>
-                    </a>
-                    <a href="https://www.figma.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-figma"></i></div>
-                        <span class="nav-text">Figma</span>
-                    </a>
-                    <a href="https://www.notion.so" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-sticky-note"></i></div>
-                        <span class="nav-text">Notion</span>
-                    </a>
-                    <a href="https://trello.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-trello"></i></div>
-                        <span class="nav-text">Trello</span>
-                    </a>
-                    <a href="https://slack.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-slack"></i></div>
-                        <span class="nav-text">Slack</span>
-                    </a>
-                    <a href="https://discord.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-discord"></i></div>
-                        <span class="nav-text">Discord</span>
-                    </a>
-                    <a href="https://zoom.us" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-video"></i></div>
-                        <span class="nav-text">Zoom</span>
-                    </a>
-                </div>
-            </div>           
-
-            <div class="category">
-                <h2 class="category-title">电话卡</h2>
-                <div class="nav-links">
-                    <a href="https://developer.mozilla.org" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-code"></i></div>
-                        <span class="nav-text">172号卡</span>
-                    </a>
-                    <a href="https://s.haokavip.com/u/670922" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-globe"></i></div>
-                        <span class="nav-text">浩卡</span>
-                    </a>
-                    <a href="https://css-tricks.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-css3-alt"></i></div>
-                        <span class="nav-text">CSS-Tricks</span>
-                    </a>
-                    <a href="https://dev.to" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-dev"></i></div>
-                        <span class="nav-text">DEV Community</span>
-                    </a>
-                    <a href="https://medium.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-medium"></i></div>
-                        <span class="nav-text">Medium</span>
-                    </a>
-                    <a href="https://www.freecodecamp.org" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-free-code-camp"></i></div>
-                        <span class="nav-text">freeCodeCamp</span>
-                    </a>
-                    <a href="https://www.codecademy.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-laptop-code"></i></div>
-                        <span class="nav-text">Codecademy</span>
-                    </a>
-                    <a href="https://www.udemy.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <span class="nav-text">Udemy</span>
-                    </a>
-                    <a href="https://www.coursera.org" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-book"></i></div>
-                        <span class="nav-text">Coursera</span>
-                    </a>
-                    <a href="https://www.khanacademy.org" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <span class="nav-text">Khan Academy</span>
-                    </a>
-                </div>
-            </div>
- 
-            <div class="category">
-                <h2 class="category-title">AI</h2>
-                <div class="nav-links">
-                    <a href="https://developer.mozilla.org" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-code"></i></div>
-                        <span class="nav-text">MDN Web Docs</span>
-                    </a>
-                    <a href="https://www.w3schools.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-globe"></i></div>
-                        <span class="nav-text">W3Schools</span>
-                    </a>
-                    <a href="https://css-tricks.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-css3-alt"></i></div>
-                        <span class="nav-text">CSS-Tricks</span>
-                    </a>
-                    <a href="https://dev.to" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-dev"></i></div>
-                        <span class="nav-text">DEV Community</span>
-                    </a>
-                    <a href="https://medium.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-medium"></i></div>
-                        <span class="nav-text">Medium</span>
-                    </a>
-                    <a href="https://www.freecodecamp.org" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-free-code-camp"></i></div>
-                        <span class="nav-text">freeCodeCamp</span>
-                    </a>
-                    <a href="https://www.codecademy.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-laptop-code"></i></div>
-                        <span class="nav-text">Codecademy</span>
-                    </a>
-                    <a href="https://www.udemy.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <span class="nav-text">Udemy</span>
-                    </a>
-                    <a href="https://www.coursera.org" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-book"></i></div>
-                        <span class="nav-text">Coursera</span>
-                    </a>
-                    <a href="https://www.khanacademy.org" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <span class="nav-text">Khan Academy</span>
-                    </a>
-                </div>
-            </div>           
-
-            <div class="category">
-                <h2 class="category-title">银行开户</h2>
-                <div class="nav-links">
-                    <a href="https://dribbble.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-dribbble"></i></div>
-                        <span class="nav-text">Dribbble</span>
-                    </a>
-                    <a href="https://www.behance.net" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-behance"></i></div>
-                        <span class="nav-text">Behance</span>
-                    </a>
-                    <a href="https://www.awwwards.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-trophy"></i></div>
-                        <span class="nav-text">Awwwards</span>
-                    </a>
-                    <a href="https://codepen.io" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-codepen"></i></div>
-                        <span class="nav-text">CodePen</span>
-                    </a>
-                    <a href="https://cssdesignawards.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-award"></i></div>
-                        <span class="nav-text">CSS Design Awards</span>
-                    </a>
-                    <a href="https://www.pinterest.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-pinterest"></i></div>
-                        <span class="nav-text">Pinterest</span>
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-instagram"></i></div>
-                        <span class="nav-text">Instagram</span>
-                    </a>
-                    <a href="https://www.deviantart.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-deviantart"></i></div>
-                        <span class="nav-text">DeviantArt</span>
-                    </a>
-                    <a href="https://www.artstation.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-palette"></i></div>
-                        <span class="nav-text">ArtStation</span>
-                    </a>
-                    <a href="https://www.creativebloq.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-paint-brush"></i></div>
-                        <span class="nav-text">Creative Bloq</span>
-                    </a>
+                    <div class="nav-item-container">
+                        <a href="https://chat.openai.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-robot"></i></div>
+                            <span class="nav-text">ChatGPT</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://chat.openai.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://claude.ai" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-brain"></i></div>
+                            <span class="nav-text">Claude</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://claude.ai" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://gemini.google.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-gem"></i></div>
+                            <span class="nav-text">Gemini</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://gemini.google.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.midjourney.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-palette"></i></div>
+                            <span class="nav-text">Midjourney</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.midjourney.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://stability.ai" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-paint-brush"></i></div>
+                            <span class="nav-text">Stable Diffusion</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://stability.ai" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.notion.so/product/ai" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-sticky-note"></i></div>
+                            <span class="nav-text">Notion AI</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.notion.so/product/ai" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.perplexity.ai" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-search"></i></div>
+                            <span class="nav-text">Perplexity</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.perplexity.ai" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.copy.ai" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-copy"></i></div>
+                            <span class="nav-text">Copy.ai</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.copy.ai" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.jasper.ai" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-file-alt"></i></div>
+                            <span class="nav-text">Jasper</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.jasper.ai" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://elevenlabs.io" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-microphone"></i></div>
+                            <span class="nav-text">ElevenLabs</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://elevenlabs.io" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <div class="category">
-                <h2 class="category-title">贷款</h2>
+                <h2 class="category-title">学习资源</h2>
                 <div class="nav-links">
-                    <a href="https://www.canva.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-paint-brush"></i></div>
-                        <span class="nav-text">Canva</span>
-                    </a>
-                    <a href="https://unsplash.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-camera"></i></div>
-                        <span class="nav-text">Unsplash</span>
-                    </a>
-                    <a href="https://fonts.google.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-font"></i></div>
-                        <span class="nav-text">Google Fonts</span>
-                    </a>
-                    <a href="https://icons8.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-icons"></i></div>
-                        <span class="nav-text">Icons8</span>
-                    </a>
-                    <a href="https://coolors.co" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-palette"></i></div>
-                        <span class="nav-text">Coolors</span>
-                    </a>
-                    <a href="https://www.remove.bg" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-image"></i></div>
-                        <span class="nav-text">Remove.bg</span>
-                    </a>
-                    <a href="https://www.tinypng.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-compress"></i></div>
-                        <span class="nav-text">TinyPNG</span>
-                    </a>
-                    <a href="https://www.figma.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-figma"></i></div>
-                        <span class="nav-text">Figma</span>
-                    </a>
-                    <a href="https://www.adobe.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-adobe"></i></div>
-                        <span class="nav-text">Adobe</span>
-                    </a>
-                    <a href="https://www.sketch.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-vector-square"></i></div>
-                        <span class="nav-text">Sketch</span>
-                    </a>
+                    <div class="nav-item-container">
+                        <a href="https://www.deeplearning.ai" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <span class="nav-text">DeepLearning.ai</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.deeplearning.ai" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.coursera.org" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-book"></i></div>
+                            <span class="nav-text">Coursera</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.coursera.org" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.kaggle.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-chart-line"></i></div>
+                            <span class="nav-text">Kaggle</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.kaggle.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://paperswithcode.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-file-code"></i></div>
+                            <span class="nav-text">Papers with Code</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://paperswithcode.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://huggingface.co" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-hands-helping"></i></div>
+                            <span class="nav-text">Hugging Face</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://huggingface.co" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.fast.ai" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-bolt"></i></div>
+                            <span class="nav-text">Fast.ai</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.fast.ai" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.udacity.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-laptop"></i></div>
+                            <span class="nav-text">Udacity</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.udacity.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.edx.org" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-university"></i></div>
+                            <span class="nav-text">edX</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.edx.org" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.youtube.com/c/3blue1brown" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-youtube"></i></div>
+                            <span class="nav-text">3Blue1Brown</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.youtube.com/c/3blue1brown" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.youtube.com/c/AndrejKarpathy" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-youtube"></i></div>
+                            <span class="nav-text">Karpathy</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.youtube.com/c/AndrejKarpathy" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
                 </div>
             </div>
- 
+            
             <div class="category">
-                <h2 class="category-title">投资理财</h2>
+                <h2 class="category-title">实用工具</h2>
                 <div class="nav-links">
-                    <a href="https://www.canva.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-paint-brush"></i></div>
-                        <span class="nav-text">Canva</span>
-                    </a>
-                    <a href="https://unsplash.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-camera"></i></div>
-                        <span class="nav-text">Unsplash</span>
-                    </a>
-                    <a href="https://fonts.google.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-font"></i></div>
-                        <span class="nav-text">Google Fonts</span>
-                    </a>
-                    <a href="https://icons8.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-icons"></i></div>
-                        <span class="nav-text">Icons8</span>
-                    </a>
-                    <a href="https://coolors.co" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-palette"></i></div>
-                        <span class="nav-text">Coolors</span>
-                    </a>
-                    <a href="https://www.remove.bg" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-image"></i></div>
-                        <span class="nav-text">Remove.bg</span>
-                    </a>
-                    <a href="https://www.tinypng.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-compress"></i></div>
-                        <span class="nav-text">TinyPNG</span>
-                    </a>
-                    <a href="https://www.figma.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-figma"></i></div>
-                        <span class="nav-text">Figma</span>
-                    </a>
-                    <a href="https://www.adobe.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-adobe"></i></div>
-                        <span class="nav-text">Adobe</span>
-                    </a>
-                    <a href="https://www.sketch.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-vector-square"></i></div>
-                        <span class="nav-text">Sketch</span>
-                    </a>
-                </div>
-            </div>            
-
-            <div class="category">
-                <h2 class="category-title">旅游</h2>
-                <div class="nav-links">
-                    <a href="https://www.canva.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-paint-brush"></i></div>
-                        <span class="nav-text">Canva</span>
-                    </a>
-                    <a href="https://unsplash.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-camera"></i></div>
-                        <span class="nav-text">Unsplash</span>
-                    </a>
-                    <a href="https://fonts.google.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-font"></i></div>
-                        <span class="nav-text">Google Fonts</span>
-                    </a>
-                    <a href="https://icons8.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-icons"></i></div>
-                        <span class="nav-text">Icons8</span>
-                    </a>
-                    <a href="https://coolors.co" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-palette"></i></div>
-                        <span class="nav-text">Coolors</span>
-                    </a>
-                    <a href="https://www.remove.bg" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-image"></i></div>
-                        <span class="nav-text">Remove.bg</span>
-                    </a>
-                    <a href="https://www.tinypng.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-compress"></i></div>
-                        <span class="nav-text">TinyPNG</span>
-                    </a>
-                    <a href="https://www.figma.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-figma"></i></div>
-                        <span class="nav-text">Figma</span>
-                    </a>
-                    <a href="https://www.adobe.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-adobe"></i></div>
-                        <span class="nav-text">Adobe</span>
-                    </a>
-                    <a href="https://www.sketch.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-vector-square"></i></div>
-                        <span class="nav-text">Sketch</span>
-                    </a>
-                </div>
-            </div>           
-
-           <div class="category">
-                <h2 class="category-title">游戏</h2>
-                <div class="nav-links">
-                    <a href="https://www.canva.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-paint-brush"></i></div>
-                        <span class="nav-text">Canva</span>
-                    </a>
-                    <a href="https://unsplash.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-camera"></i></div>
-                        <span class="nav-text">Unsplash</span>
-                    </a>
-                    <a href="https://fonts.google.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-font"></i></div>
-                        <span class="nav-text">Google Fonts</span>
-                    </a>
-                    <a href="https://icons8.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-icons"></i></div>
-                        <span class="nav-text">Icons8</span>
-                    </a>
-                    <a href="https://coolors.co" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-palette"></i></div>
-                        <span class="nav-text">Coolors</span>
-                    </a>
-                    <a href="https://www.remove.bg" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-image"></i></div>
-                        <span class="nav-text">Remove.bg</span>
-                    </a>
-                    <a href="https://www.tinypng.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-compress"></i></div>
-                        <span class="nav-text">TinyPNG</span>
-                    </a>
-                    <a href="https://www.figma.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-figma"></i></div>
-                        <span class="nav-text">Figma</span>
-                    </a>
-                    <a href="https://www.adobe.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-adobe"></i></div>
-                        <span class="nav-text">Adobe</span>
-                    </a>
-                    <a href="https://www.sketch.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-vector-square"></i></div>
-                        <span class="nav-text">Sketch</span>
-                    </a>
+                    <div class="nav-item-container">
+                        <a href="https://www.google.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-google"></i></div>
+                            <span class="nav-text">Google</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.google.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://github.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-github"></i></div>
+                            <span class="nav-text">GitHub</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://github.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://stackoverflow.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-stack-overflow"></i></div>
+                            <span class="nav-text">Stack Overflow</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://stackoverflow.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://codepen.io" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-codepen"></i></div>
+                            <span class="nav-text">CodePen</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://codepen.io" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.figma.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-figma"></i></div>
+                            <span class="nav-text">Figma</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.figma.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://www.notion.so" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-sticky-note"></i></div>
+                            <span class="nav-text">Notion</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://www.notion.so" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://trello.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-trello"></i></div>
+                            <span class="nav-text">Trello</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://trello.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://slack.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-slack"></i></div>
+                            <span class="nav-text">Slack</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://slack.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://discord.com" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fab fa-discord"></i></div>
+                            <span class="nav-text">Discord</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://discord.com" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-container">
+                        <a href="https://zoom.us" target="_blank" class="nav-main-link">
+                            <div class="nav-icon"><i class="fas fa-video"></i></div>
+                            <span class="nav-text">Zoom</span>
+                        </a>
+                        <div class="nav-action-links">
+                            <a href="https://zoom.us" target="_blank" class="nav-action-link">访问</a>
+                            <a href="#" class="nav-action-link">攻略</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-           <div class="category">
-                <h2 class="category-title">软件系统</h2>
-                <div class="nav-links">
-                    <a href="https://www.canva.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-paint-brush"></i></div>
-                        <span class="nav-text">Canva</span>
-                    </a>
-                    <a href="https://unsplash.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-camera"></i></div>
-                        <span class="nav-text">Unsplash</span>
-                    </a>
-                    <a href="https://fonts.google.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-font"></i></div>
-                        <span class="nav-text">Google Fonts</span>
-                    </a>
-                    <a href="https://icons8.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-icons"></i></div>
-                        <span class="nav-text">Icons8</span>
-                    </a>
-                    <a href="https://coolors.co" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-palette"></i></div>
-                        <span class="nav-text">Coolors</span>
-                    </a>
-                    <a href="https://www.remove.bg" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-image"></i></div>
-                        <span class="nav-text">Remove.bg</span>
-                    </a>
-                    <a href="https://www.tinypng.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-compress"></i></div>
-                        <span class="nav-text">TinyPNG</span>
-                    </a>
-                    <a href="https://www.figma.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-figma"></i></div>
-                        <span class="nav-text">Figma</span>
-                    </a>
-                    <a href="https://www.adobe.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fab fa-adobe"></i></div>
-                        <span class="nav-text">Adobe</span>
-                    </a>
-                    <a href="https://www.sketch.com" target="_blank" class="nav-item">
-                        <div class="nav-icon"><i class="fas fa-vector-square"></i></div>
-                        <span class="nav-text">Sketch</span>
-                    </a>
-                </div>
-            </div>           
-
         </div>
         
         <div class="contact">
-            <a href="mailto:do@fasnlee.com" class="btn">do@fasnlee.com</a>
+            <h3>联系我们</h3>
+            <p>如果您有任何建议或想要添加更多AI工具，请通过以下方式联系我们</p>
+            <a href="mailto:contact@ai-navigation.com" class="btn">contact@ai-navigation.com</a>
         </div>
     </div>
 
