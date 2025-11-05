@@ -179,8 +179,8 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             padding: 20px 15px;
-            /* 关键修改：添加固定高度和flex布局 */
-            min-height: 180px;
+            /* 关键修改：增加整体高度以提供更多空间 */
+            min-height: 200px;
             justify-content: space-between;
         }
         
@@ -197,8 +197,8 @@
             text-decoration: none;
             color: #20c997;
             width: 100%;
-            /* 关键修改：移除底部边距，由flex布局控制间距 */
-            margin-bottom: 0;
+            /* 关键修改：增加底部边距，创造更多空间 */
+            margin-bottom: 15px;
         }
         
         .nav-icon {
@@ -220,8 +220,8 @@
             font-size: 0.85rem;
             text-align: center;
             font-weight: 500;
-            /* 关键修改：添加固定高度和文本对齐 */
-            min-height: 40px;
+            /* 关键修改：增加文本区域高度 */
+            min-height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -235,6 +235,8 @@
             margin-top: 0; /* 移除上边距，由flex布局控制 */
             width: 100%;
             justify-content: center;
+            /* 关键修改：增加顶部边距，创造更多间距 */
+            margin-top: 10px;
         }
         
         .nav-action-link {
@@ -324,8 +326,8 @@
                 width: calc(10% - 18px); /* 10个图标一排 */
                 min-width: 110px;
                 padding: 20px 15px;
-                /* 关键修改：PC端固定高度 */
-                min-height: 160px;
+                /* 关键修改：PC端增加高度 */
+                min-height: 180px;
             }
             
             .nav-icon {
@@ -336,7 +338,7 @@
             
             .nav-text {
                 font-size: 0.9rem;
-                min-height: 35px; /* PC端调整文本区域高度 */
+                min-height: 40px; /* PC端调整文本区域高度 */
             }
             
             /* PC端确保访问和攻略链接横排 */
@@ -358,8 +360,8 @@
                 width: calc(20% - 16px); /* 5个图标一排 */
                 min-width: 130px;
                 padding: 25px 15px;
-                /* 关键修改：平板端固定高度 */
-                min-height: 180px;
+                /* 关键修改：平板端增加高度 */
+                min-height: 200px;
             }
             
             .nav-icon {
@@ -371,7 +373,7 @@
             
             .nav-text {
                 font-size: 1rem;
-                min-height: 45px; /* 平板端调整文本区域高度 */
+                min-height: 50px; /* 平板端调整文本区域高度 */
             }
             
             .nav-action-link {
@@ -413,8 +415,8 @@
                 width: calc(50% - 10px); /* 2个图标一排 */
                 min-width: 140px;
                 padding: 25px 15px;
-                /* 关键修改：手机端固定高度 */
-                min-height: 180px;
+                /* 关键修改：手机端增加高度 */
+                min-height: 200px;
             }
             
             .nav-icon {
@@ -426,7 +428,7 @@
             
             .nav-text {
                 font-size: 1.1rem;
-                min-height: 50px; /* 手机端调整文本区域高度 */
+                min-height: 55px; /* 手机端调整文本区域高度 */
             }
             
             .nav-links {
@@ -488,7 +490,7 @@
             .nav-item-container {
                 min-width: 130px;
                 padding: 20px 10px;
-                min-height: 170px; /* 超小屏幕调整高度 */
+                min-height: 190px; /* 超小屏幕调整高度 */
             }
             
             .nav-icon {
@@ -499,7 +501,7 @@
             
             .nav-text {
                 font-size: 1rem;
-                min-height: 45px; /* 超小屏幕调整文本区域高度 */
+                min-height: 50px; /* 超小屏幕调整文本区域高度 */
             }
             
             .nav-action-link {
@@ -600,7 +602,7 @@
                     <div class="nav-item-container">
                         <a href="https://stability.ai" target="_blank" class="nav-main-link">
                             <div class="nav-icon"><i class="fas fa-paint-brush"></i></div>
-                            <span class="nav-text">Stable Diffusion</span>
+                            <span class="nav-text">StableDiffusion</span>
                         </a>
                         <div class="nav-action-links">
                             <a href="#" class="nav-action-link">攻略</a>
@@ -696,7 +698,7 @@
                     <div class="nav-item-container">
                         <a href="https://paperswithcode.com" target="_blank" class="nav-main-link">
                             <div class="nav-icon"><i class="fas fa-file-code"></i></div>
-                            <span class="nav-text">Papers with Code</span>
+                            <span class="nav-text">PaperswithCode</span>
                         </a>
                         <div class="nav-action-links">
                             <a href="#" class="nav-action-link">攻略</a>
@@ -792,7 +794,7 @@
                     <div class="nav-item-container">
                         <a href="https://stackoverflow.com" target="_blank" class="nav-main-link">
                             <div class="nav-icon"><i class="fab fa-stack-overflow"></i></div>
-                            <span class="nav-text">Stack Overflow</span>
+                            <span class="nav-text">StackOverflow</span>
                         </a>
                         <div class="nav-action-links">
                             <a href="#" class="nav-action-link">攻略</a>
@@ -862,7 +864,7 @@
                     <div class="nav-item-container">
                         <a href="https://zoom.us" target="_blank" class="nav-main-link">
                             <div class="nav-icon"><i class="fas fa-video"></i></div>
-                            <span class="nav-text">Zoom</span>
+                            <span class="nav-text">ZoomZoom</span>
                         </a>
                         <div class="nav-action-links">
                             <a href="#" class="nav-action-link">攻略</a>
