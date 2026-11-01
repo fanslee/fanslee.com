@@ -3,9 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PartyParty趴趴科技：科技向善·疗愈人心</title>
+<title>fanslee李范思：你的数字游民好搭子</title>
 <link rel="icon" href="icon.png" type="image/x-icon">
 <style>
+/* ============ 品牌/交易所板块 ============ */
+  .brand-section{
+    position:relative;
+    border-radius:20px;
+    padding:32px 16px 24px;
+    background:var(--card-bg);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid var(--card-border);
+    box-shadow:0 8px 32px rgba(20,5,50,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    overflow:hidden;
+    margin-bottom:18px;
+  }
+  .brand-section::before{
+    content:"";
+    position:absolute;
+    top:0;left:0;right:0;
+    height:2px;
+    background:linear-gradient(90deg,transparent,var(--rose-gold-2),transparent);
+  }
+  /* 左上角角标 */
+  .corner-badge{
+    position:absolute;
+    top:0;left:0;
+    background:linear-gradient(135deg,var(--rose-gold-1),var(--rose-gold-3));
+    color:#1a0a2e;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    padding:6px 14px;
+    border-radius:20px 0 20px 0;
+  }
+  /* 横向 3 列 */
+  .brand-row{
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .brand-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    flex:1;
+    text-align:center;
+  }
+  .brand-logo{
+    width:48px;height:48px;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(247,224,200,0.2);
+    background:rgba(255,255,255,0.05);
+  }
+  .brand-logo img{width:100%;height:100%;object-fit:cover;display:block}
+  .brand-name{
+    font-size:12px;
+    font-weight:600;
+    color:var(--text-main);
+  }
+  .brand-desc{
+    font-size:10px;
+    color:var(--text-dim);
+    line-height:1.4;
+  }
   /* ============ 设计令牌 ============ */
   :root{
     --bg-deep:#1d0a3e;
@@ -215,11 +280,11 @@
   <!-- HERO -->
   <section class="hero">
     <!--<div class="hero-avatar">
-      <img src="logo.png" alt="趴趴科技">
+      <img src="logo.png" alt="李范思">
     </div>-->
-    <h1>PartyParty</h1>
-    <h1>趴趴科技</h1>
-    <div class="sub">科技向善 · 疗愈人心</div>
+    <h1>fanslee</h1>
+    <h1>李范思</h1>
+    <div class="sub">你的数字游民好搭子</div>
   </section>
 
   <!-- 三大项目 -->
@@ -240,6 +305,38 @@
         <div class="line2">只偏爱"万分之一"的妳</div>
       </div>
     </div>
+
+<!-- 3大交易所 -->
+  <section class="brand-section">
+    <div class="corner-badge">3大交易所</div>
+    <div class="brand-row">
+
+      <div class="brand-item">
+        <div class="brand-logo">
+          <img src="okx.png" alt="OKX">
+        </div>
+        <div class="brand-name">OKX</div>
+        <div class="brand-desc">全球领先<br>加密交易所</div>
+      </div>
+
+      <div class="brand-item">
+        <div class="brand-logo">
+          <img src="binance.png" alt="Binance">
+        </div>
+        <div class="brand-name">Binance</div>
+        <div class="brand-desc">交易量<br>全球第一</div>
+      </div>
+
+      <div class="brand-item">
+        <div class="brand-logo">
+          <img src="bybit.png" alt="Bybit">
+        </div>
+        <div class="brand-name">Bybit</div>
+        <div class="brand-desc">衍生品<br>交易优选</div>
+      </div>
+
+    </div>
+  </section>
 
     <div class="card">
       <div class="card-head">
