@@ -1,282 +1,642 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>美股导航</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fanslee.com/x/css/x.css">      
-    <link rel="icon" href="https://fanslee.com/favicon.ico" type="image/x-icon">
+<html lang="zh-CN" data-page-node-id="GPpoRkTppp41Gy1HKHwoSr">
+<head data-page-node-id="LaJdq3U7j4lOe6koMUyxoz">
+    <meta charset="UTF-8" data-page-node-id="7N2p8vzoc71EqBljH3tOMj">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="YL7Y7NaJ7scuamcYqpXtTl">
+    <meta name="description" content="美股小白入门图文攻略：市场差别、开户指南、交易软件、期权、做空一次讲清楚。" data-page-node-id="3MoShipQ2ErbE9U1o4ltuZ">
+    <title>fanslee李范思</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" data-page-node-id="btAcdXM4GSGGHC3E6IDHHn">
+    <link rel="icon" href="https://fanslee.com/favicon.ico" type="image/x-icon" data-page-node-id="y0nnPH0pUNrQbsFvyvhMP5">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root{
+            --green:#20c997;
+            --green-d:#159a76;
+            --green-l:#e8f8f3;
+            --ink:#243b53;
+            --ink-2:#486581;
+            --muted:#7b8ca3;
+            --line:#e3edf5;
+            --bg1:#eef3f8;
+            --bg2:#dce8f2;
+            --card:#ffffff;
+            --amber:#f0a020;
+            --red:#e5534b;
+            --blue:#3b82f6;
+            --purple:#8b6ce0;
+            --shadow:0 10px 30px rgba(32,90,120,.10);
+            --radius:18px;
+        }
+        html{ scroll-behavior:smooth; }
+        body{
+            font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Roboto,sans-serif;
+            background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);
+            color:var(--ink);
+            line-height:1.75;
+            min-height:100vh;
+            padding:20px;
+            -webkit-font-smoothing:antialiased;
+        }
+        .container{
+            max-width:1080px;
+            width:100%;
+            margin:0 auto;
+            background:var(--card);
+            border-radius:24px;
+            box-shadow:var(--shadow);
+            overflow:hidden;
+            animation:fadeIn .8s ease-out;
+        }
+        @keyframes fadeIn{ from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
+
+        /* ===== Header ===== */
+        header{
+            background:linear-gradient(135deg,#20c997 0%,#17a583 100%);
+            color:#fff;
+            padding:42px 28px 34px;
+            text-align:center;
+            position:relative;
+            overflow:hidden;
+        }
+        header::after{
+            content:"";position:absolute;inset:0;
+            background:radial-gradient(circle at 85% -10%,rgba(255,255,255,.22),transparent 45%),
+                       radial-gradient(circle at 8% 110%,rgba(255,255,255,.15),transparent 40%);
+            pointer-events:none;
+        }
+        .profile-img{ position:relative;z-index:1; }
+        .fanslee-logo{
+            display:block;
+            width:104px;height:104px;margin:0 auto 16px;
+            border-radius:50%;
+            object-fit:cover;
+            box-shadow:0 8px 20px rgba(0,0,0,.18), 0 0 0 3px rgba(255,255,255,.4);
+        }
+        header h1{ position:relative;z-index:1; font-size:2.1rem;font-weight:800;letter-spacing:.5px;margin-bottom:6px; }
+        .kicker{ position:relative;z-index:1; display:inline-block; font-size:.82rem;font-weight:600;
+            background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);
+            padding:5px 16px;border-radius:50px;margin-bottom:12px; }
+        .title{ position:relative;z-index:1; font-size:1.05rem;opacity:.95;margin-bottom:4px; }
+        .lead-sub{ position:relative;z-index:1; font-size:.9rem;opacity:.85;max-width:560px;margin:0 auto; }
+        .social-links{ position:relative;z-index:1; display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:24px; }
+        .social-links a{
+            color:#fff;text-decoration:none;
+            background:rgba(255,255,255,.16);
+            border:1px solid rgba(255,255,255,.28);
+            min-width:66px;padding:10px 8px 8px;border-radius:14px;
+            display:flex;flex-direction:column;align-items:center;gap:6px;
+            transition:transform .25s ease,background .25s ease;
+        }
+        .social-links a:hover{ transform:translateY(-4px);background:rgba(255,255,255,.3); }
+        .social-icon{ width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:1.05rem; }
+        .link-text{ font-size:.72rem;font-weight:600; }
+
+        /* ===== Sticky nav ===== */
+        .nav-wrap{ position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
+            border-bottom:1px solid var(--line); }
+        .category-nav{ display:flex;gap:8px;overflow-x:auto;padding:12px 18px;scrollbar-width:none;scroll-behavior:smooth; }
+        .category-nav::-webkit-scrollbar{ display:none; }
+        .category-link{
+            flex:0 0 auto;text-decoration:none;white-space:nowrap;
+            font-size:.9rem;font-weight:600;color:var(--green-d);
+            border:1.5px solid var(--green);border-radius:50px;padding:8px 18px;
+            transition:all .25s ease;
+        }
+        .category-link .n{ opacity:.6;margin-right:4px;font-size:.8rem; }
+        .category-link:hover{ background:var(--green-l); }
+        .category-link.active{ background:var(--green);color:#fff;box-shadow:0 4px 12px rgba(32,201,151,.35); }
+        .category-link.active .n{ opacity:.85;color:#fff; }
+
+        /* ===== Sections ===== */
+        main{ padding:8px 26px 30px; }
+        .intro{ text-align:center;padding:30px 10px 8px; }
+        .intro h2{ font-size:1.5rem;color:var(--ink);margin-bottom:8px; }
+        .intro p{ color:var(--ink-2);max-width:640px;margin:0 auto;font-size:.96rem; }
+        .intro .hint{ display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--green-l);
+            color:var(--green-d);font-size:.84rem;font-weight:600;padding:8px 16px;border-radius:50px; }
+
+        .section{ scroll-margin-top:70px;padding:34px 0 30px;border-bottom:1px dashed var(--line); }
+        .section:last-child{ border-bottom:none; }
+        .sec-head{ display:flex;align-items:center;gap:14px;margin-bottom:22px; }
+        .sec-badge{ flex:0 0 auto;width:52px;height:52px;border-radius:14px;
+            background:linear-gradient(135deg,var(--green),var(--green-d));
+            color:#fff;display:flex;align-items:center;justify-content:center;
+            font-size:1.3rem;font-weight:800;box-shadow:0 6px 16px rgba(32,201,151,.3); }
+        .sec-titles h3{ font-size:1.35rem;line-height:1.35; }
+        .sec-titles p{ color:var(--muted);font-size:.88rem;margin-top:2px; }
+        .sec-body{ padding-left:0; }
+
+        .figure{
+            background:linear-gradient(180deg,#fbfdff,#f4f9fc);
+            border:1px solid var(--line);border-radius:var(--radius);
+            padding:20px;margin:6px 0 22px;
+        }
+        .figure-title{ font-size:.8rem;color:var(--muted);font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px;
+            display:flex;align-items:center;gap:8px; }
+        .figure-title i{ color:var(--green); }
+        figure svg{ display:block;width:100%;height:auto; }
+        figcaption{ font-size:.8rem;color:var(--muted);text-align:center;margin-top:10px; }
+
+        /* trading hours timeline */
+        .tl-hours{ display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin:0 0 6px;
+            border-bottom:1px solid var(--line);padding-bottom:4px; }
+        .tl-row{ display:flex;align-items:center;gap:10px;margin:12px 0; }
+        .tl-label{ flex:0 0 74px;font-size:.82rem;font-weight:700;display:flex;align-items:center;gap:6px; }
+        .tl-track{ position:relative;flex:1;height:20px;background:#eef2f7;border-radius:6px;overflow:hidden; }
+        .tl-bar{ position:absolute;top:0;bottom:0;border-radius:6px;display:flex;align-items:center;
+            font-size:.66rem;color:#fff;font-weight:700;padding-left:6px;white-space:nowrap; }
+        .bar-a{ background:var(--green); }
+        .bar-h{ background:var(--blue); }
+        .bar-u1{ background:var(--purple);border-radius:6px 0 0 6px;justify-content:flex-end;padding:0 6px 0 0; }
+        .bar-u2{ background:var(--purple);border-radius:0 6px 6px 0; }
+        .tl-note{ font-size:.76rem;color:var(--muted);margin-top:8px; }
+
+        /* comparison table */
+        .table-scroll{ overflow-x:auto;border-radius:14px;border:1px solid var(--line); }
+        table{ width:100%;border-collapse:collapse;min-width:640px;font-size:.88rem; }
+        th,td{ padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top; }
+        thead th{ background:var(--green-l);color:var(--green-d);font-weight:700;font-size:.9rem;white-space:nowrap; }
+        tbody tr:nth-child(even){ background:#fafcfe; }
+        tbody tr:hover{ background:#f3faf7; }
+        td:first-child{ font-weight:700;color:var(--ink);white-space:nowrap;background:#f7fafc; }
+        .flag{ font-size:1.05rem;margin-right:4px; }
+
+        /* steps */
+        .steps{ position:relative;padding-left:8px; }
+        .steps::before{ content:"";position:absolute;left:26px;top:18px;bottom:18px;width:2px;
+            background:linear-gradient(var(--green),var(--green-l)); }
+        .step{ position:relative;display:flex;gap:18px;margin-bottom:20px; }
+        .step:last-child{ margin-bottom:0; }
+        .step-num{ flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:#fff;border:2px solid var(--green);
+            color:var(--green-d);font-weight:800;display:flex;align-items:center;justify-content:center;z-index:1; }
+        .step-content{ padding-top:4px; }
+        .step-content h4{ font-size:1rem;margin-bottom:3px; }
+        .step-content p{ color:var(--ink-2);font-size:.9rem; }
+        .step-content .ic{ color:var(--green);margin-right:6px; }
+
+        /* cards grid */
+        .cards{ display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px; }
+        .app-card{ background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;
+            box-shadow:0 4px 14px rgba(30,70,100,.05);transition:transform .25s ease,box-shadow .25s ease; }
+        .app-card:hover{ transform:translateY(-5px);box-shadow:0 12px 26px rgba(30,70,100,.12); }
+        .app-top{ display:flex;align-items:center;gap:12px;margin-bottom:10px; }
+        .app-logo{ flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+            color:#fff;font-weight:800;font-size:1rem; }
+        .lg1{ background:linear-gradient(135deg,#c0392b,#e74c3c); }
+        .lg2{ background:linear-gradient(135deg,#1d9bf0,#0d8bdd); }
+        .lg3{ background:linear-gradient(135deg,#f5a623,#f7c04a); }
+        .lg4{ background:linear-gradient(135deg,#6c5ce7,#8b7cf0); }
+        .lg5{ background:linear-gradient(135deg,#20c997,#17a583); }
+        .lg6{ background:linear-gradient(135deg,#334155,#64748b); }
+        .app-name{ font-weight:700;font-size:1rem;line-height:1.25; }
+        .app-name small{ display:block;font-weight:500;color:var(--muted);font-size:.76rem; }
+        .app-card p{ font-size:.86rem;color:var(--ink-2); }
+        .tags{ display:flex;flex-wrap:wrap;gap:6px;margin-top:10px; }
+        .tag{ font-size:.7rem;font-weight:600;color:var(--green-d);background:var(--green-l);padding:3px 9px;border-radius:50px; }
+
+        /* callout */
+        .callout{ display:flex;gap:12px;background:#fff8ec;border:1px solid #f6dfb6;border-left:4px solid var(--amber);
+            border-radius:12px;padding:14px 16px;margin-top:18px;font-size:.88rem;color:#7a5b12; }
+        .callout i{ flex:0 0 auto;font-size:1.1rem;margin-top:2px; }
+        .callout strong{ display:block;margin-bottom:2px; }
+        .callout.risk{ background:#fff2f1;border-color:#f6c9c6;border-left-color:var(--red);color:#9a342f; }
+        .callout.tip{ background:#eef7ff;border-color:#c9e2f7;border-left-color:var(--blue);color:#1d5b96; }
+
+        /* simple definition card */
+        .def{ background:linear-gradient(135deg,#f0fbf7,#e6f7f1);border:1px solid #cceede;border-radius:16px;
+            padding:20px 22px;margin-bottom:20px; }
+        .def h4{ color:var(--green-d);font-size:1.05rem;margin-bottom:8px;display:flex;align-items:center;gap:8px; }
+        .def p{ font-size:.93rem;color:var(--ink-2); }
+        .def .en{ font-size:.78rem;color:var(--muted); }
+        .kv{ display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:16px; }
+        .kv div{ background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px; }
+        .kv b{ display:block;color:var(--green-d);font-size:.9rem;margin-bottom:2px; }
+        .kv span{ font-size:.82rem;color:var(--ink-2); }
+
+        /* legend */
+        .legend{ display:flex;flex-wrap:wrap;gap:16px;justify-content:center;font-size:.78rem;color:var(--ink-2);margin-top:10px; }
+        .legend i{ display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px; }
+
+        /* ===== Footer ===== */
+        .contact{ background:linear-gradient(135deg,#f4f9fc,#eef5fa);text-align:center;padding:34px 24px 40px;border-top:1px solid var(--line); }
+        .contact h3{ font-size:1.2rem;margin-bottom:6px; }
+        .contact p{ color:var(--muted);font-size:.9rem;margin-bottom:6px; }
+        .btn{ display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;
+            padding:12px 34px;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;
+            box-shadow:0 8px 20px rgba(32,201,151,.32);transition:all .25s ease; }
+        .btn:hover{ transform:translateY(-3px);box-shadow:0 14px 28px rgba(32,201,151,.42); }
+        .fineprint{ font-size:.74rem;color:var(--muted);margin-top:20px;max-width:620px;margin-left:auto;margin-right:auto; }
+
+        /* back to top */
+        .back-to-top{ position:fixed;bottom:26px;right:26px;width:52px;height:52px;border-radius:50%;
+            background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;border:none;cursor:pointer;
+            display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+            box-shadow:0 8px 22px rgba(32,201,151,.4);opacity:0;visibility:hidden;transition:all .3s ease;z-index:60; }
+        .back-to-top.show{ opacity:1;visibility:visible; }
+        .back-to-top:hover{ transform:translateY(-4px); }
+
+        /* ===== Responsive ===== */
+        @media (max-width:720px){
+            body{ padding:10px; }
+            .container{ border-radius:16px; }
+            header{ padding:32px 18px 26px; }
+            header h1{ font-size:1.7rem; }
+            .fanslee-logo{ width:86px;height:86px; }
+            main{ padding:4px 16px 24px; }
+            .section{ padding:26px 0; }
+            .sec-titles h3{ font-size:1.18rem; }
+            .sec-badge{ width:44px;height:44px;font-size:1.1rem; }
+            .figure{ padding:14px; }
+            .tl-label{ flex-basis:60px;font-size:.74rem; }
+            .social-links{ gap:10px; }
+            .social-links a{ min-width:60px;padding:8px 6px; }
+        }
+        @media (max-width:420px){
+            .title{ font-size:.95rem; }
+            .lead-sub{ font-size:.82rem; }
+            .intro h2{ font-size:1.3rem; }
+            .kv{ grid-template-columns:1fr; }
+            .back-to-top{ bottom:18px;right:18px;width:46px;height:46px; }
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="profile-img">
-                <div class="fanslee"><i class="fas fa-chart-line"></i></div>
-            </div>
-            <h1>美股导航</h1>
-            <p class="title">常用美股网址导航</p>
-            <div class="social-links">
+<body data-page-node-id="xuvlDPjjYdp5dmlbk3QPYu">
+    <div class="container" data-page-node-id="gg8Br6bEOUItpNmX3DNu0Q">
 
-                <a href="https://fanslee.com/btc" target="_blank">
-                    <div class="social-icon"><i class="fas fa-coins"></i></div>
-                    <span class="link-text">币圈</span>
-                </a>
-                <a href="https://fanslee.com/us" target="_blank">
-                    <div class="social-icon"><i class="fas fa-chart-line"></i></div>
-                    <span class="link-text">美股</span>
-                </a>
-                <a href="https://fanslee.com/net" target="_blank">
-                    <div class="social-icon"><i class="fas fa-globe"></i></div>
-                    <span class="link-text">冲浪</span>
-                </a>                  
-                <a href="https://fanslee.com/buy" target="_blank">
-                    <div class="social-icon"><i class="fas fa-shopping-cart"></i></div>
-                    <span class="link-text">海淘</span>
-                </a>                      
-                <a href="https://fanslee.com/ai" target="_blank">
-                    <div class="social-icon"><i class="fas fa-robot"></i></div>
-                    <span class="link-text">AI</span>
-                </a>         
+        <!-- ============ HEADER ============ -->
+        <header data-page-node-id="EYvpo6Gf8qZCGMDpbwrY07">
+            <div class="profile-img" data-page-node-id="YEGgMx7wquiG3MXZx9gV1g">
+                <img class="fanslee-logo" src="x/icon/mglogo.png" alt="fanslee 李范思 Logo">
             </div>
+            <span class="kicker" data-page-node-id="9C0cIWNZW9QNMqzyBH3DbO"><i class="fas fa-book-open" style="margin-right:6px" data-page-node-id="vfx2wpfAyy6O5RC4TPXVbS"></i>小白入门 · 图文攻略</span>
+            <h1 data-page-node-id="mpTkGaqHttwj1uDzMQ3yzA">fanslee李范思</h1>
+            <p class="title" data-page-node-id="VGJ2CYM6kEEgXOMgdyzoDD">你的美股好搭子</p>
+            <p class="lead-sub" data-page-node-id="BNC59vaGz6RHyMHXrHRzkZ">从零开始，用一张图、一段话讲清楚美股入门最常见的 5 个问题。</p>
         </header>
-        
-        <div class="navigation">
-            <div class="category-nav" id="categoryNav">
-                <div class="scroll-indicator left">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="nav-container" id="navContainer">
-                <a href="#nav01" class="category-link  active">常用</a>
-                <a href="#nav02" class="category-link">证券</a>
-                <a href="#nav03" class="category-link">银行</a>
-                <a href="#nav04" class="category-link">分析</a>
-                <a href="#nav05" class="category-link">转账</a>
-                </div>
-                <div class="scroll-indicator right">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div> 
-            
-            <div class="ai-content">
-                <!-- 常用分类 -->
-                <div class="category" id="nav01">
-                    <h2 class="category-title">常用APP</h2>
-                    <div class="nav-links">                          
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/tv" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/tradingview512.png" alt="TradingView"></div>
-                                <span class="nav-text">TradingView</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/tv" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div> 
-                        
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/ibkr" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/ibkr512.png" alt="盈透证券"></div>
-                                <span class="nav-text">盈透证券</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/ibkr" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>                            
 
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/biya" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/biyapay512.png" alt="Biyapay"></div>
-                                <span class="nav-text">Biyapay</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/biya" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>
+        <!-- ============ STICKY NAV ============ -->
+        <div class="nav-wrap" data-page-node-id="971XcLBgqq45Xopn7gJW27">
+            <nav class="category-nav" id="categoryNav" aria-label="攻略目录" data-page-node-id="H9s9jxYYOeJDb0VTe5c9SF">
+                <a href="#s1" class="category-link active" data-page-node-id="M7Tfxw33bwz0NLNJfrRxNY"><span class="n" data-page-node-id="fsvHfqPpFgjgd0HvP3Nl4W">01</span>市场差别</a>
+                <a href="#s2" class="category-link" data-page-node-id="pZPEmusUwfjm6t4HHinVay"><span class="n" data-page-node-id="ivqFUBz5iH83b0RumAsECx">02</span>开户指南</a>
+                <a href="#s3" class="category-link" data-page-node-id="iTbZyGiLEs6aPojLMzxGjb"><span class="n" data-page-node-id="1beyAmxxVJCP6OH4kwyfyO">03</span>交易软件</a>
+                <a href="#s4" class="category-link" data-page-node-id="zhsTrm5IWUousf9vcHYPbu"><span class="n" data-page-node-id="fBLnV4LOAIfnzMOdXbTkxN">04</span>什么是期权</a>
+                <a href="#s5" class="category-link" data-page-node-id="syEJHcOtR8GwvVKbq9sEX2"><span class="n" data-page-node-id="BS4LV9n4XBsvDssATX3vHH">05</span>什么是做空</a>
+            </nav>
+        </div>
 
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/lb" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/lb512.png" alt="长桥证券"></div>
-                                <span class="nav-text">长桥证券</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/lb" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>                            
-
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/ushk" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/ushk512.png" alt="香港盈立"></div>
-                                <span class="nav-text">香港盈立</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/ushk" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>
-                        
-
-                    </div>
-                </div>
-                
-                <!-- 证券公司 -->
-                <div class="category" id="nav02">
-                    <h2 class="category-title">证券公司</h2>
-                    <div class="nav-links">
-
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/biya" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/biyapay512.png" alt="Biyapay"></div>
-                                <span class="nav-text">Biyapay</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/biya" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div> 
-
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/ibkr" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/ibkr512.png" alt="盈透证券"></div>
-                                <span class="nav-text">盈透证券</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/ibkr" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>                            
-
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/lb" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/lb512.png" alt="长桥证券"></div>
-                                <span class="nav-text">长桥证券</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/lb" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>                            
-
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/ushk" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/ushk512.png" alt="香港盈立"></div>
-                                <span class="nav-text">香港盈立</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/ushk" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>
-
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/ussg" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/ussg512.png" alt="新加坡盈立"></div>
-                                <span class="nav-text">新加坡盈立</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/ussg" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>
-
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/zrsec" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/zrsec512.png" alt="卓锐证券"></div>
-                                <span class="nav-text">卓锐证券</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                            <a href="https://p-p.fun/zrsec" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>                           
-
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/zvst" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/zvst512.png" alt="尊嘉证券"></div>
-                                <span class="nav-text">尊嘉证券</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/zvst" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>    
-                
-                 <!-- 银行分类 -->
-                <div class="category" id="nav03">
-                    <h2 class="category-title">境外银行</h2>
-                    <div class="nav-links">
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/za" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/za512.png" alt="众安银行"></div>
-                                <span class="nav-text">众安银行</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/za" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div>                            
-
-                        
-                    </div>
-                </div>               
-                
-                <!-- 数据分析 -->
-                <div class="category" id="nav04">
-                    <h2 class="category-title">数据分析</h2>
-                    <div class="nav-links">
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/tv" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/tradingview512.png" alt="TradingView"></div>
-                                <span class="nav-text">TradingView</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/tv" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div> 
-
-                    </div>
-                </div>
-
-                 <!-- 跨境转账 -->
-                <div class="category" id="nav05">
-                    <h2 class="category-title">跨境转账</h2>
-                    <div class="nav-links">
-                        <div class="nav-item-container">
-                            <a href="https://p-p.fun/pandaremit" target="_blank" class="nav-main-link">
-                                <div class="nav-icon"><img src="https://fanslee.com/x/icon/pandaremit512.png" alt="熊猫速汇"></div>
-                                <span class="nav-text">熊猫速汇</span>
-                            </a>
-                            <div class="nav-action-links">
-                                <a href="#" class="nav-action-link">攻略</a>
-                                <a href="https://p-p.fun/pandaremit" target="_blank" class="nav-action-link">访问</a>
-                            </div>
-                        </div> 
-
-                    </div>
-                </div>               
- 
+        <main data-page-node-id="mRp2xXJBCyxHNlfkH46LPx">
+            <div class="intro" data-page-node-id="nCDecM7i9URA5HLyGwE6DN">
+                <h2 data-page-node-id="Nw8TOLWJ8eBgfvzK3U8MBA">美股小白 5 分钟入门</h2>
+                <p data-page-node-id="npeuAv4UQklhbPWNMOqPTC">按顺序看下来，先搞懂市场规则，再解决开户和工具，最后认识期权与做空这两个"进阶武器"。</p>
+                <div class="hint" data-page-node-id="l0g1d8HTnzIHD13688OGsE"><i class="fas fa-mouse-pointer" data-page-node-id="ehuHQRWZ1SFw0CTw1zZI7D"></i>点击上方目录，可直接跳转到对应章节</div>
             </div>
-        </div>
-        
-        <div class="contact">
-            <h3>联系邮箱</h3>
-            <p></p>
-            <a href="mailto:do@fasnlee.com" class="btn">do@fanslee.com</a>
+
+            <!-- ========== 1. 市场差别 ========== -->
+            <section class="section" id="s1" data-page-node-id="WVFRyLPnJtw536U9ZvHEOK">
+                <div class="sec-head" data-page-node-id="M3FRPw26L9cgibZH2bj9RM">
+                    <div class="sec-badge" data-page-node-id="y467cAM29yEw5E8wrxozIV">01</div>
+                    <div class="sec-titles" data-page-node-id="TUmPlJ1RUTOmwYhH2PPYOu">
+                        <h3 data-page-node-id="bleAGQBiKZo12nC4z2rtPh">美股和 A 股、港股，最大差别在哪？</h3>
+                        <p data-page-node-id="bQVJ5xyubL2v5x3fDyfuwF">三张市场，规则大不同：先看交易时段，再看涨跌停和交易单位。</p>
+                    </div>
+                </div>
+                <div class="sec-body" data-page-node-id="50lnuKHLvI54kZvBxqsgjj">
+
+                    <div class="figure" data-page-node-id="4BdOb6N1Qsk9Syh7c9NeKi">
+                        <div class="figure-title" data-page-node-id="PHZ8TFPazVSIHyKHsxrWUP"><i class="fas fa-clock" data-page-node-id="FrOchGxtYCaQhGLYMrCREt"></i>交易时段对照（北京时间）</div>
+                        <div class="tl-hours" data-page-node-id="z65lx9j6GgnPqXfgPir4ms"><span data-page-node-id="dBxvsKcpL0GIetWADrVaJV">00:00</span><span data-page-node-id="MLF6YBR9gJNovgowwpOE3u">04:00</span><span data-page-node-id="K1fHdCoFDSB5Y6GcDTfHVT">08:00</span><span data-page-node-id="TOcaDUxqEwdse4a3hqefTN">12:00</span><span data-page-node-id="nM5Ram2rgwY4NRw14XqFLL">16:00</span><span data-page-node-id="6ySGUrKdBp9BLTZCQwpIBB">20:00</span><span data-page-node-id="EifCBhk1082vbVtcEsAnPY">24:00</span></div>
+                        <div class="tl-row" data-page-node-id="XmHpcCTD42Ya8HIJYI24PV">
+                            <div class="tl-label" data-page-node-id="Di1wYYGLNknc2EgiGwfQTT"><span class="flag" data-page-node-id="qJmHvW2aXIUcJq74PtMKpT">🇨🇳</span>A股</div>
+                            <div class="tl-track" data-page-node-id="cPPuJgNmp4DOHTHo1HfFU0"><div class="tl-bar bar-a" style="left:39.6%;width:22.9%" data-page-node-id="uZ1yUhQSTiNDEADJcjASWe">09:30–15:00</div></div>
+                        </div>
+                        <div class="tl-row" data-page-node-id="PAvDlRCLRLMcJGHBqbXIs4">
+                            <div class="tl-label" data-page-node-id="O7gxl03QNm1wl4VYaxhxof"><span class="flag" data-page-node-id="PPErDRCvVtUjMlXIKmFAKk">🇭🇰</span>港股</div>
+                            <div class="tl-track" data-page-node-id="s4pwAAnuWZSYbhR1C16GRA"><div class="tl-bar bar-h" style="left:39.6%;width:27.1%" data-page-node-id="7xoBTMQu2DhGArWH3dGPA9">09:30–16:00</div></div>
+                        </div>
+                        <div class="tl-row" data-page-node-id="kTPAHEBMWVTZ8LsgYisFia">
+                            <div class="tl-label" data-page-node-id="2PLbCCHRbxlXI8c99gl4mc"><span class="flag" data-page-node-id="0ucPISsVECHEZaNta1P3Of">🇺🇸</span>美股</div>
+                            <div class="tl-track" data-page-node-id="owisCIqtBHVRMKKBCszGwP">
+                                <div class="tl-bar bar-u1" style="left:0;width:16.7%" data-page-node-id="jEQ8lNE8XtRvduB7jm2CK4">00–04</div>
+                                <div class="tl-bar bar-u2" style="left:89.6%;width:10.4%" data-page-node-id="3Kv70udy738jXxycSqkopH">21:30</div>
+                            </div>
+                        </div>
+                        <p class="tl-note" data-page-node-id="go5VciSLA9I8PgAqV6iH3n">注：美股为夏令时（约 4 月–10 月）的北京时间；冬令时整体顺延 1 小时，即 22:30–次日 05:00。中午 12:00–13:00 为 A 股 / 港股午休。</p>
+                        <div class="legend" data-page-node-id="Lsh7qj8VCrI40MNVuljGpk">
+                            <span data-page-node-id="8sDTBIY6bdbnfwe0D02way"><i style="background:var(--green)" data-page-node-id="5F32YEfcKvjEAIHLASWqqx"></i>A股</span>
+                            <span data-page-node-id="zwYL77sefqQc5vtzQxOVJG"><i style="background:var(--blue)" data-page-node-id="Bb6l09rtNRPUGnVGhQ8SOg"></i>港股</span>
+                            <span data-page-node-id="BN1qMKyuylWLYTDiOMUyh9"><i style="background:var(--purple)" data-page-node-id="oOSdVIr4Y2r0dRjmHDxlk8"></i>美股</span>
+                        </div>
+                    </div>
+
+                    <div class="table-scroll" data-page-node-id="EItaBF11WF8pDIGFrqqim8">
+                        <table data-page-node-id="Ej287yYCaR3XJJiLcWluHm">
+                            <thead data-page-node-id="QpNPhVzuVfLFo40BSxseOt">
+                                <tr data-page-node-id="OtPJSmXoK67TA0rCbZGIyt"><th data-page-node-id="1BODW8hYXALLzlE2PSGfQv">对比项</th><th data-page-node-id="aVdKeLsCZR2BEehWYCc6mT"><span class="flag" data-page-node-id="b1W8Ql5C9KW93E7LrQlf7n">🇺🇸</span>美股</th><th data-page-node-id="mjZDH5dQJbcUhnVtmUkPsw"><span class="flag" data-page-node-id="gX5Esw87D3WTyEqYO2fEsl">🇨🇳</span>A股</th><th data-page-node-id="lwpE36cwKYxTzWH5rkfDA3"><span class="flag" data-page-node-id="rQwBGEuNwqGgTN6ZXty7kd">🇭🇰</span>港股</th></tr>
+                            </thead>
+                            <tbody data-page-node-id="76qv48r3s4xJvhDoCWCsBt">
+                                <tr data-page-node-id="pVFrQ8gHsH98Qi7smiwOCI"><td data-page-node-id="V3ne8BDy3QX1QshW2XXyHu">交易时段(北京)</td><td data-page-node-id="NIY9XeLVMVJKerSIsU13bl">21:30–04:00（夏令时）</td><td data-page-node-id="XuKdyCOeX4ZYcBMEGmTKPv">09:30–11:30 / 13:00–15:00</td><td data-page-node-id="q04QEZauYsMbpQxJywFsus">09:30–12:00 / 13:00–16:00</td></tr>
+                                <tr data-page-node-id="PQ4yjlv68wDujt0ObRRUNI"><td data-page-node-id="RI3jWq9E1RXNYLGq21sX10">涨跌幅限制</td><td data-page-node-id="38YReIy51NrZwHqggLjoS5">无涨跌停，但有熔断机制</td><td data-page-node-id="HS7eIHHM5J0QLDIvQItnC0">有，主板一般 ±10%，创业板/科创板 ±20%</td><td data-page-node-id="DMrLRlmR9fmnEXnkBmAj2L">无涨跌停</td></tr>
+                                <tr data-page-node-id="RzbDDOfVhFMPEvCZI39PRn"><td data-page-node-id="P7C9NSa8R5S8xTbxDEWDKa">交易单位</td><td data-page-node-id="SUIpIftMadWCMZowLxCOi2">1 股起买</td><td data-page-node-id="nIfmaK8bb9SOLGjLeCCvzd">100 股（1 手）起</td><td data-page-node-id="j6QBFgZg7LbMQuxGU1EmSG">1 手，股数按个股而定</td></tr>
+                                <tr data-page-node-id="8gHkwPl2SdAnEb921jDz8D"><td data-page-node-id="mCM4ZRnGHqNewf7drMDWwD">交收制度</td><td data-page-node-id="DPkEsgLyczH6TTKWEvErcL">T+1 结算，保证金账户可做日内</td><td data-page-node-id="UdQwQ4loNe3VPkTQ6BA8VU">T+1，当天买入次日才能卖</td><td data-page-node-id="nKr1yUmxjidL8sZDhoDOW2">T+0，当天可买卖</td></tr>
+                                <tr data-page-node-id="ntaICZRA2E4HEQP2rpbM6l"><td data-page-node-id="4arVZnZgW2mHKBhL5CujnL">计价货币</td><td data-page-node-id="e13sLoGCvsEK7EPrArlFL1">美元 USD</td><td data-page-node-id="XJmxhTN1TcvqKkF99eeM9B">人民币 CNY</td><td data-page-node-id="cxptki2RUX40qoR9yAlEyE">港币 HKD</td></tr>
+                                <tr data-page-node-id="OTXpbkZQucGkByCHe28Rzp"><td data-page-node-id="bQLojE0ahImOYbkHle2DtD">做空 / 期权</td><td data-page-node-id="yV8Qg5xHWnCsQ21eLGmJCw">机制成熟、品种丰富</td><td data-page-node-id="agFnCYDSQnbY15gwheffGN">融券受限，个股期权较少</td><td data-page-node-id="D2FGl42hYBeyVHDZDQHl5h">可卖空，衍生品较多</td></tr>
+                                <tr data-page-node-id="8tZ9oYXoGa9yBqZGkFyIEA"><td data-page-node-id="PLDsx31wJDkw0eu6vUP3kW">开户方式</td><td data-page-node-id="LiX7VGXaX0i1G9It9WXvjf">互联网券商在线开户</td><td data-page-node-id="LYzRYtZ1hpEACEATkAp7Zv">境内券商营业部 / APP</td><td data-page-node-id="EjtXR03290UXlKNDyFSDH2">香港券商或港股通</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="callout tip" data-page-node-id="a1zaw7eLrSMZ0SIiLfnmWL">
+                        <i class="fas fa-lightbulb" data-page-node-id="MxLDtenpyLHiBzAYhBFRxB"></i>
+                        <div data-page-node-id="GmohvY1yNvg2X8CVsjHtpC"><strong data-page-node-id="gHwQyIGIucwypr10U743EZ">小白划重点</strong>最直观的三点差异：美股没有涨跌停但会熔断、1 股就能买、交易时段正好是中国的深夜；A 股有涨跌停且 T+1；港股 T+0 可当天买卖。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== 2. 开户 ========== -->
+            <section class="section" id="s2" data-page-node-id="91ckT6VjQqWluJxnocYRwu">
+                <div class="sec-head" data-page-node-id="ZazpWxQajjQwGiIO9ob5ZD">
+                    <div class="sec-badge" data-page-node-id="M8YiPweQEUccurwMsmg3jY">02</div>
+                    <div class="sec-titles" data-page-node-id="SCiHLE7jGNVAq6JvKSavPB">
+                        <h3 data-page-node-id="TXfS4agkHpRa0kN7AdCLRN">中国居民怎么开户？</h3>
+                        <p data-page-node-id="ri8aFrRxlrWRDh7QZBDR5V">通过持牌券商在线申请即可，一般 1–3 个工作日出结果。</p>
+                    </div>
+                </div>
+                <div class="sec-body" data-page-node-id="qjlvy2wCSoBgjHDxwbLxRo">
+
+                    <div class="figure" data-page-node-id="G3MErJ67RBIK1KWPakCd9s">
+                        <div class="figure-title" data-page-node-id="Sp30dk4wDiFVoOQIT6ADvd"><i class="fas fa-list-ol" data-page-node-id="HbNCGFLDnB8XZISNiv9m6o"></i>开户五步流程</div>
+                        <div class="steps" data-page-node-id="XdhBJ0iLmdlHoq1zUmvDPJ">
+                            <div class="step" data-page-node-id="sLcbgh6Arn8pxyCwIRTOwR"><div class="step-num" data-page-node-id="lsd8bqYv5iuhlI1dRbzeXz">1</div><div class="step-content" data-page-node-id="BSUjzEhXtMBbqmkCUzkpap">
+                                <h4 data-page-node-id="1sx3bkUOxXIdncixDTCfHx"><i class="fas fa-shield-alt ic" data-page-node-id="VtHHaGS4vIM8x160N2vRUu"></i>选券商</h4>
+                                <p data-page-node-id="KHp7PZcXfPYizu3jcDXNgE">选择持有正规牌照、受监管的券商，先确认监管与资金安全。</p>
+                            </div></div>
+                            <div class="step" data-page-node-id="AE6gMX3656FeXZGFDu9PXa"><div class="step-num" data-page-node-id="umMWEzYKVMBxaC7W0bkbxi">2</div><div class="step-content" data-page-node-id="FGwLpv9FwS81D67qMSJvlJ">
+                                <h4 data-page-node-id="AojadcO0bLJ1LMIXkgNs4b"><i class="fas fa-id-card ic" data-page-node-id="oETJ84JkJwIc66kRpT25x3"></i>备材料</h4>
+                                <p data-page-node-id="qs9SDJTAJPAqHDdj4RG5sV">本人身份证或护照、本人银行卡、常用手机号；部分券商还需地址证明（如近 3 个月账单）。</p>
+                            </div></div>
+                            <div class="step" data-page-node-id="kjs9iVe86u38QQX4cFBAHQ"><div class="step-num" data-page-node-id="YwZ1flOU7juZKvDxguQuhv">3</div><div class="step-content" data-page-node-id="93mDfJxfQYyIgeRzgUsQws">
+                                <h4 data-page-node-id="8p439A7AdEsw7eNt7SYzwx"><i class="fas fa-mobile-alt ic" data-page-node-id="5LAzHHPn3cvuEBSFs7lXHz"></i>在线申请</h4>
+                                <p data-page-node-id="K6lfRWOdDkhN2InJNxwCF6">下载券商 APP 填写资料，上传证件完成 KYC 身份认证，并做风险承受测评。</p>
+                            </div></div>
+                            <div class="step" data-page-node-id="w9avsfOYJwXktatM7uK7j4"><div class="step-num" data-page-node-id="hm86Pb71e1H3kFfga8YamA">4</div><div class="step-content" data-page-node-id="3Ik1h0ZEqtA7z9FihGKQqB">
+                                <h4 data-page-node-id="WUIkx3utZt2f1QppQWFqak"><i class="fas fa-circle-check ic" data-page-node-id="IosWOJdZ7imAB8sewFPNPE"></i>等待审核</h4>
+                                <p data-page-node-id="g99qt8ca85MBlPYKydgVZZ">提交后等待审核，通常需要 1–3 个工作日，进度可在 APP 内查看。</p>
+                            </div></div>
+                            <div class="step" data-page-node-id="XpAIKJRlFeUaVMFBaf3wr3"><div class="step-num" data-page-node-id="3lKUVb5JoErOjhcyAgSvjR">5</div><div class="step-content" data-page-node-id="aJBYoGdFOX9oMDEUUXafG4">
+                                <h4 data-page-node-id="rlbi4qXxUkIpWCRhk2HuLS"><i class="fas fa-exchange-alt ic" data-page-node-id="1Ouy4wt7ximoAtBMzGYAsB"></i>入金激活</h4>
+                                <p data-page-node-id="cAlhtaBCzECcFTzcZr4X6f">审核通过后按指引跨境汇款入金，资金到账即可开始交易。</p>
+                            </div></div>
+                        </div>
+                    </div>
+
+                    <div class="callout" data-page-node-id="L9qekEcWYaRKr8hfHwxPrK">
+                        <i class="fas fa-exclamation-triangle" data-page-node-id="Z7DGiAHIKkdcqZZdbmOF4W"></i>
+                        <div data-page-node-id="XdFHOKvNtPMYqCjPJfshc5"><strong data-page-node-id="6eBlUnvT0Zf9DIXt89ROcA">合规与资金提示</strong>每人每年有等值 5 万美元的购汇便利化额度，需如实申报用途；境外投资请通过正规持牌渠道，遵守外汇与税务规定（如 CRS 信息交换）。切勿使用他人账户或地下钱庄。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== 3. 交易软件 ========== -->
+            <section class="section" id="s3" data-page-node-id="hWgk3c9TDG5lfXGhixUDfN">
+                <div class="sec-head" data-page-node-id="y47msASCp2rOsJqAWu91Gh">
+                    <div class="sec-badge" data-page-node-id="AuHJgjCwUY2tN2kXLhK0Ea">03</div>
+                    <div class="sec-titles" data-page-node-id="aiYj39ifwnC8wDlTIm7Wq0">
+                        <h3 data-page-node-id="vL5EUZfHx77YoL7idLTQCZ">哪些交易软件适合中国居民？</h3>
+                        <p data-page-node-id="YPopBAha0ra0b7qwPL90lQ">按"监管牌照 + 中文服务 + 入金便利 + 费率"四个维度来挑。</p>
+                    </div>
+                </div>
+                <div class="sec-body" data-page-node-id="o2Lbf2RG4FBmh6JgfCPAFy">
+
+                    <div class="cards" data-page-node-id="23GpkkYxHhGz6amZbEId2I">
+                        <div class="app-card" data-page-node-id="40qMQsUrWqyPpOd8iswgP9">
+                            <div class="app-top" data-page-node-id="NwxI8YVunelMHrHOHhgK1D"><div class="app-logo lg1" data-page-node-id="HQAkwe7OtnG4vg8ivLNd3T">IB</div><div class="app-name" data-page-node-id="obITtNWqPSPkoEPyCp5GXG">盈透证券<small data-page-node-id="1aTLcc3SdnA4AxgdQfIFQs">Interactive Brokers</small></div></div>
+                            <p data-page-node-id="uSHVc67AmyUHeqcrmbDaka">全球市场覆盖广、费率低、交易品种全，适合想做多市场的进阶用户。</p>
+                            <div class="tags" data-page-node-id="mWY3KHM8BiVD8uaKSD6vr6"><span class="tag" data-page-node-id="FqY2fF2CYEa0q6wRy4ZDJI">全球市场</span><span class="tag" data-page-node-id="uwvqXYoDsVuCvS66fw6Ubb">低费率</span><span class="tag" data-page-node-id="FopAxzioIDbrHWRuYIVMN3">进阶</span></div>
+                        </div>
+                        <div class="app-card" data-page-node-id="eGGp42pgrXwTQmNmTaLXlw">
+                            <div class="app-top" data-page-node-id="FYKUzA9QcG1c7F1iVMxCcj"><div class="app-logo lg2" data-page-node-id="qrJbqi0mNzx3eDipROlCS4">富</div><div class="app-name" data-page-node-id="Cix59y5hdzk7nuIVyuU1Wt">富途牛牛<small data-page-node-id="JBQ3wYZVFwBrJAxW936CZt">Futu / Moomoo</small></div></div>
+                            <p data-page-node-id="uiCgmP2IblmFQCbyUSYzSt">中文体验友好，港美股一站式，行情、资讯与社区功能完善。</p>
+                            <div class="tags" data-page-node-id="93AcKJPVbnzMRUCLEfkj9T"><span class="tag" data-page-node-id="DS0sLVxCroCaKj21wesemD">中文友好</span><span class="tag" data-page-node-id="knyR1oKZSjVDLGWBGDc9WP">港美股</span><span class="tag" data-page-node-id="SbQodOtHXYXP6DLTITtyB4">新手</span></div>
+                        </div>
+                        <div class="app-card" data-page-node-id="rjfRN1EzLwSeG6dJFYJdKm">
+                            <div class="app-top" data-page-node-id="VZ0cS5o0s06s8PmmihnKdC"><div class="app-logo lg3" data-page-node-id="tvxUaXNCP1BQhL4ZPAMMrt">老</div><div class="app-name" data-page-node-id="YGs3KZPYEHjye16OEwJ5Vf">老虎证券<small data-page-node-id="SkOGC14CHqjxlooo5OzXEZ">Tiger Brokers</small></div></div>
+                            <p data-page-node-id="vsMCOKhinbvStJyiqx7Q52">中文服务到位，覆盖美股、港股及期货，开户与入金指引清晰。</p>
+                            <div class="tags" data-page-node-id="Hc1p1adBf4LMPlPF3ZsWO5"><span class="tag" data-page-node-id="eM1f9PiLCgNPkE7hYoC02y">中文服务</span><span class="tag" data-page-node-id="IJVxYW0uWQKjrjZ0va0eKP">港美股</span><span class="tag" data-page-node-id="lIxQu6mmdYq78gsI3vGtCp">期货</span></div>
+                        </div>
+                        <div class="app-card" data-page-node-id="ZXJy21A8NTfSQtIJqDfhA4">
+                            <div class="app-top" data-page-node-id="ErOrWzp5LOE8axScmESiqI"><div class="app-logo lg4" data-page-node-id="cSIQIHDwNAGWDB8N4flsVx">长</div><div class="app-name" data-page-node-id="QLKahbx6OD1A1as4KqDoEv">长桥证券<small data-page-node-id="mTsM7qE3dzAegPA1N2h3nE">Longbridge</small></div></div>
+                            <p data-page-node-id="NOxpSXQnJSxhPRkHCOmtHG">港美股交易，社区与资讯内容丰富，界面简洁适合入门。</p>
+                            <div class="tags" data-page-node-id="EKy6bi3CvGrFrT59LqIvQm"><span class="tag" data-page-node-id="keOPBWh5zMyY5pa5l1sF2z">港美股</span><span class="tag" data-page-node-id="DyYT5r4GqTJenXm24DiNh2">社区资讯</span><span class="tag" data-page-node-id="ZL6XpkSck3wxHhH7WMHBfG">简洁</span></div>
+                        </div>
+                        <div class="app-card" data-page-node-id="Q4rLv8JkRbHKkTlGLDsJPJ">
+                            <div class="app-top" data-page-node-id="uvzs8bzT8ADDNCENDMbB1P"><div class="app-logo lg5" data-page-node-id="5qnYgbzrHtLYuseHBYN0MV">A</div><div class="app-name" data-page-node-id="KRxrZuLQKhEi8bg1p7XWJ9">境内券商 APP<small data-page-node-id="XWQULZz63yE1e2onWmBXdx">如华泰、中信等</small></div></div>
+                            <p data-page-node-id="8YJNcyydAH3Peyya57Qmkg">开 A 股账户、通过港股通交易港股，人民币入金便捷、合规省心。</p>
+                            <div class="tags" data-page-node-id="lnCbC5d0x0yiAkXQAIuO7I"><span class="tag" data-page-node-id="GWRKSL1ig3wyDSDRGKMRMN">A股</span><span class="tag" data-page-node-id="3AHaac39wlU2N2DmnJ9YVq">港股通</span><span class="tag" data-page-node-id="G5Qm49HddLINnlKHTcIZCX">人民币入金</span></div>
+                        </div>
+                        <div class="app-card" data-page-node-id="iWUHoZi0uzL1ShPrdl3mbx">
+                            <div class="app-top" data-page-node-id="27KZ1jVfqpRPPWn6VtxnRk"><div class="app-logo lg6" data-page-node-id="AI4DAQO4k9YtAg72MGn2XG">TV</div><div class="app-name" data-page-node-id="Yk60hl8MTF6BS1Wd5FsDD5">TradingView<small data-page-node-id="h6arVdXimM1YRZXbHACfQ4">看图分析工具</small></div></div>
+                            <p data-page-node-id="lXIOFPejORPGWs0oHZCb71">强大的图表与技术分析工具（非券商），适合看盘、画线、找思路。</p>
+                            <div class="tags" data-page-node-id="73wRZdGGUohpIfy1COAYGd"><span class="tag" data-page-node-id="uOxGar0VVf5SFWOUa0znTs">图表分析</span><span class="tag" data-page-node-id="IdDfykQHNnBjIKYjqe6QCQ">看盘</span><span class="tag" data-page-node-id="LEKltIIiC8dfyivSVmVBZ6">辅助工具</span></div>
+                        </div>
+                    </div>
+
+                    <div class="callout tip" data-page-node-id="D1k60wJ3F2GD2yJoGrIMDp">
+                        <i class="fas fa-check-circle" data-page-node-id="CkvcXsl6CoGj62VBNj8zsC"></i>
+                        <div data-page-node-id="2sWfadIlj7vQRqFvrT59cD"><strong data-page-node-id="5xzJqMz3oQsEx7jqoLyZZC">怎么选不踩坑</strong>优先看：① 是否持牌受监管；② 是否有中文客服；③ 入金出金是否方便、费率是否透明；④ 是否支持你想交易的市场与品种。具体以各平台官方信息为准，此处仅作科普，不构成推荐。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== 4. 期权 ========== -->
+            <section class="section" id="s4" data-page-node-id="YVIIhgbrGG0ADdZVMu14o9">
+                <div class="sec-head" data-page-node-id="TCAbFiwM3mV2qY21iSOhjg">
+                    <div class="sec-badge" data-page-node-id="S7JUZCi04ybckPLc0OiOFK">04</div>
+                    <div class="sec-titles" data-page-node-id="hqX8ySB0IrGNxwYlkY1xZW">
+                        <h3 data-page-node-id="OD9pYifXFFO7MYHB2zFpo5">什么是期权？</h3>
+                        <p data-page-node-id="T1vXStiuWBuVNmdSP3MB25">一种"权利"合约：买方付一笔权利金，换来未来按约定价买入或卖出的选择权。</p>
+                    </div>
+                </div>
+                <div class="sec-body" data-page-node-id="jERndxCIBEFwtZmmyaXSjT">
+
+                    <div class="def" data-page-node-id="cOdeeQCBzaG8BctFrN81iD">
+                        <h4 data-page-node-id="uaDN1NpdL7WtoIhcQmrTLE"><i class="fas fa-contract" data-page-node-id="GdhAsQfHLPkr0XjdeQxoaS"></i>一句话理解 <span class="en" data-page-node-id="DLLEUZH3xSEjPIu6IRAJqH">Option / 选择权</span></h4>
+                        <p data-page-node-id="NTBOMkc5ynHsSKgh0bill4">期权是一份合约：买方支付<strong data-page-node-id="xdsFZSKJEflaURETuLsFQ4">权利金（Premium）</strong>后，获得在未来某个日期之前，按<strong data-page-node-id="Ck3mFoylJbBkE7odSxZwx2">约定价格（行权价）</strong>买入或卖出标的资产的<strong data-page-node-id="r9Kxy2XWkXuZeAkMgtHsA9">权利，而不是义务</strong>；卖方收取权利金，承担被行权时必须履约的义务。</p>
+                        <div class="kv" data-page-node-id="coY06jGBrGjc2UTFwxCxhJ">
+                            <div data-page-node-id="oey12HehRxGH5yoLrCHXaO"><b data-page-node-id="pWwAEHg1ACZlyaIjs3prQa"><i class="fas fa-arrow-trend-up" data-page-node-id="FDprkd2AMvyqOFZq8zLDWa"></i> 看涨期权 Call</b><span data-page-node-id="uTsFz5b7hjiO8k7kKAakNP">约定"买入"的权利，看好后市时常用。</span></div>
+                            <div data-page-node-id="XtQWZ8OCXHtsxqWYKTdqDE"><b data-page-node-id="d1eCmXC3qYjLpotnxykmCp"><i class="fas fa-arrow-trend-down" data-page-node-id="UW2yKBDCrtCRPGADNssvVY"></i> 看跌期权 Put</b><span data-page-node-id="jQ0aRtl0T95wETBG8iwAO5">约定"卖出"的权利，看淡后市或对冲时常用。</span></div>
+                            <div data-page-node-id="o69I6JwoI0Pe9uUXwMcH9u"><b data-page-node-id="X5Oq5kOrfaJrHV2K3oqsfF"><i class="fas fa-bullseye" data-page-node-id="MmGWtgl1gUxolvoqQz6GXm"></i> 行权价 Strike</b><span data-page-node-id="q1rncKgejzTGInHTx4lET9">合约约定的买入/卖出价格。</span></div>
+                            <div data-page-node-id="dP9qGGhmLKbAmN2fTAQT9H"><b data-page-node-id="KBgLDVH7x2RE3VnsBe3cMU"><i class="fas fa-hourglass-half" data-page-node-id="0XkuOVXJlwls4lfq4DtyPz"></i> 到期日 Expiry</b><span data-page-node-id="lElvTj1fxhxC6v9fUUyTEA">权利失效的日期，过期合约作废。</span></div>
+                        </div>
+                    </div>
+
+                    <div class="figure" data-page-node-id="E8IFCNSk4u1MAzruNXEUAA">
+                        <div class="figure-title" data-page-node-id="YeaDJkVO7ke45f5vx5R3dN"><i class="fas fa-chart-area" data-page-node-id="xFx3EbH5UAABrrMUVPaNg4"></i>买方盈亏示意图（到期时）</div>
+                        <svg viewBox="0 0 640 250" role="img" aria-label="看涨与看跌期权买方到期盈亏示意图" data-page-node-id="phnY72hNS2ionUnqdagZyM">
+                            <!-- grid -->
+                            <defs data-page-node-id="oxhlocHfmcGQE2ovGmdB7s">
+                                <linearGradient id="gCall" x1="0" y1="0" x2="0" y2="1" data-page-node-id="1IO4Z9p4lScTjFFsjidzTX">
+                                    <stop offset="0" stop-color="#e8f8f3" data-page-node-id="wxB3aKs1WFQzkbRvPduh8T"/><stop offset="1" stop-color="#fff" data-page-node-id="BBpK8GC5PrCNr5Qxhv2gGb"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- LEFT: CALL -->
+                            <g font-family="inherit" data-page-node-id="R5BLiyVRtHNOJFXfG2BUPA">
+                                <text x="12" y="20" font-size="14" font-weight="700" fill="#159a76" data-page-node-id="SmREyBC7pu3WqLi4yNurNy">看涨期权 Call（买方）</text>
+                                <!-- axes -->
+                                <line x1="40" y1="150" x2="290" y2="150" stroke="#94a3b8" stroke-width="1.5" data-page-node-id="7q5OcgA0mITBHBsxYL27Nr"/>
+                                <line x1="40" y1="40" x2="40" y2="210" stroke="#94a3b8" stroke-width="1.5" data-page-node-id="TeFFs7S4P4GTh4KGV1dKvo"/>
+                                <text x="292" y="154" font-size="10" fill="#7b8ca3" data-page-node-id="iKwskeSHAG5asyxns1uSNL">股价</text>
+                                <text x="14" y="44" font-size="10" fill="#7b8ca3" data-page-node-id="TVkjwEWOSjO4mCIKuFHioa">盈亏</text>
+                                <!-- zero line label -->
+                                <text x="16" y="154" font-size="9" fill="#94a3b8" data-page-node-id="TiiZZwSfX1kLWf3O3yKsII">0</text>
+                                <!-- strike dashed -->
+                                <line x1="150" y1="40" x2="150" y2="210" stroke="#cbd5e1" stroke-dasharray="4 4" data-page-node-id="qR8Q8ZBCeJ7VK9pdttwf31"/>
+                                <text x="150" y="225" font-size="10" fill="#64748b" text-anchor="middle" data-page-node-id="WI8svm55FKWVtObHIS0BwZ">行权价</text>
+                                <!-- profit line: flat at -premium (y=185) until strike x=150, then up -->
+                                <path d="M40 185 L150 185 L270 65" fill="none" stroke="#20c997" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="bqgDQgurGxKTlWbEmkgShb"/>
+                                <!-- premium loss shading -->
+                                <rect x="40" y="150" width="110" height="35" fill="#fdecea" opacity="0.7" data-page-node-id="GmdIkavZVK1ivKeUn89csR"/>
+                                <text x="95" y="174" font-size="10" fill="#e5534b" text-anchor="middle" data-page-node-id="PWtBG0wCfkJ1y1pfH2A7yt">最多亏权利金</text>
+                                <!-- breakeven marker -->
+                                <circle cx="190" cy="150" r="4" fill="#159a76" data-page-node-id="J8vdVTW4qfaVIiSU9AzLdf"/>
+                                <text x="190" y="225" font-size="9" fill="#159a76" text-anchor="middle" data-page-node-id="dJJDKbCumXPMUN44hCXJqu">盈亏平衡</text>
+                                <text x="255" y="80" font-size="10" fill="#159a76" data-page-node-id="ZxwsmAv30uDQbquazhLo2W">盈利↑</text>
+                            </g>
+                            <!-- divider -->
+                            <line x1="320" y1="30" x2="320" y2="220" stroke="#e3edf5" stroke-width="2" data-page-node-id="v5WAfTz8c4jrVaakE41mG8"/>
+                            <!-- RIGHT: PUT -->
+                            <g font-family="inherit" data-page-node-id="byBvWijS22isC7mTAU5oVJ">
+                                <text x="348" y="20" font-size="14" font-weight="700" fill="#3b82f6" data-page-node-id="xyfvidujmHJun5CkCJwWCK">看跌期权 Put（买方）</text>
+                                <line x1="376" y1="150" x2="626" y2="150" stroke="#94a3b8" stroke-width="1.5" data-page-node-id="em6L8kxcoGSHGbiZpVfJ4o"/>
+                                <line x1="376" y1="40" x2="376" y2="210" stroke="#94a3b8" stroke-width="1.5" data-page-node-id="ZxooasZEEeCSqvWD1wMFjz"/>
+                                <text x="628" y="154" font-size="10" fill="#7b8ca3" data-page-node-id="Y16ijSw7hJoK09If9zuxkH">股价</text>
+                                <text x="350" y="44" font-size="10" fill="#7b8ca3" data-page-node-id="iQDH8JcL73d2X5z3WsrYTb">盈亏</text>
+                                <text x="352" y="154" font-size="9" fill="#94a3b8" data-page-node-id="mdJ6pz7idAO1YoLjVue7uF">0</text>
+                                <line x1="486" y1="40" x2="486" y2="210" stroke="#cbd5e1" stroke-dasharray="4 4" data-page-node-id="svqk3JwKbl3NE59xnkbGrV"/>
+                                <text x="486" y="225" font-size="10" fill="#64748b" text-anchor="middle" data-page-node-id="NysISOc0Q3BUUAOWcg5v6G">行权价</text>
+                                <!-- profit line: from high left down to -premium at strike, then flat -->
+                                <path d="M400 65 L486 185 L606 185" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="hoogWccLYVUAggFAzMPVnO"/>
+                                <rect x="486" y="150" width="120" height="35" fill="#fdecea" opacity="0.7" data-page-node-id="wsXGfMyFI32Ganh2EhnDQT"/>
+                                <text x="546" y="174" font-size="10" fill="#e5534b" text-anchor="middle" data-page-node-id="ficv5OJDeUq4rAv6FKahzh">最多亏权利金</text>
+                                <circle cx="446" cy="150" r="4" fill="#3b82f6" data-page-node-id="grb3gf2SqhJGAT6XUBy4r4"/>
+                                <text x="446" y="225" font-size="9" fill="#3b82f6" text-anchor="middle" data-page-node-id="ES4JSui9waQYvvJlI1HwzG">盈亏平衡</text>
+                                <text x="400" y="80" font-size="10" fill="#3b82f6" data-page-node-id="Q9QDr3tBsBCyR438EtIbwZ">盈利↑</text>
+                            </g>
+                        </svg>
+                        <figcaption data-page-node-id="CaIt8SuN3IT2JUpikRVoLk">买方特征：亏损有限（最多亏掉权利金），潜在收益较大——这也是新手通常从"买方"入手的原因。</figcaption>
+                    </div>
+
+                    <div class="def" style="background:linear-gradient(135deg,#f7f5ff,#eef0ff);border-color:#ddd8f7" data-page-node-id="LTtNCkxifSKdYGJhAMfsjP">
+                        <h4 style="color:#6c5ce7" data-page-node-id="VkHtU4asznJYG4maJHxfzF"><i class="fas fa-circle-play" data-page-node-id="8Ww0Y1icevXa47eOM42Dky"></i>举个最简单的例子</h4>
+                        <p data-page-node-id="dzYPTMZaddj84LNlKUOsgP">你看好某股票现价 $100，花 $5 权利金买入一张行权价 $105、1 个月后到期的<strong data-page-node-id="pKisNBfVJhHKYzmsbyQYX0">看涨期权</strong>。若到期股价涨到 $120，你有权按 $105 买入、按市价 $120 卖出，毛利 $15，扣掉 $5 权利金净赚 $10；若股价一直低于 $105，你选择不行权，最多只亏 $5 权利金。</p>
+                    </div>
+
+                    <div class="callout risk" data-page-node-id="hCOLDsIBECP9aPJEZ7oF3u">
+                        <i class="fas fa-triangle-exclamation" data-page-node-id="SrL9UG7PUjtwJ1vECWUUIE"></i>
+                        <div data-page-node-id="Rumq0If7vHOFlj9CwD2JBz"><strong data-page-node-id="6S3jRktH4cVTnR38i8RQBS">风险提示</strong>买方最多亏权利金，但权利金有时间价值损耗，到期前若方向不对可能归零；卖出期权收益有限而潜在风险较大，杠杆属性强，新手务必先学习、小仓位、看不懂不做。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== 5. 做空 ========== -->
+            <section class="section" id="s5" data-page-node-id="mY78IjwT7BLLL4VLDsTopi">
+                <div class="sec-head" data-page-node-id="6kkqMHgKPaqa3ekEicfMfH">
+                    <div class="sec-badge" data-page-node-id="jrtYfAdW1L3Z6sHvmlhlfM">05</div>
+                    <div class="sec-titles" data-page-node-id="Ze61AJPE9H4wREtzwHIoOF">
+                        <h3 data-page-node-id="fA3eL2wHLOTcrvp5YFt5Fd">什么是做空？</h3>
+                        <p data-page-node-id="10vsP8nEJOMAl9PD1jmWnc">做多"低买高卖"，做空则是"高卖低买"——赚的是股价下跌的钱。</p>
+                    </div>
+                </div>
+                <div class="sec-body" data-page-node-id="VDWoE4vu1RHFZ4QOOWNjnK">
+
+                    <div class="def" data-page-node-id="uOii4r9ION79qoM049skWh">
+                        <h4 data-page-node-id="gYtzZ9HMofucNZtIsEkGZB"><i class="fas fa-arrow-down-long" data-page-node-id="Zf60nxvymlntTL3prSacX0"></i>一句话理解 <span class="en" data-page-node-id="p3DstSxYJiDQmoXrLY51EF">Short Selling / 卖空</span></h4>
+                        <p data-page-node-id="2OYwjrOqQrivbQb9THKnLu">先向券商<strong data-page-node-id="6EqXKImeHhANecJ8IyE5qY">借入股票卖出</strong>，等股价下跌后再<strong data-page-node-id="LODHawfdA4UAB5MNm9uxzT">买回同样数量的股票归还</strong>，赚取卖出价与买回价之间的差价。因为"先卖后买"，所以只有判断股价下跌才能盈利。</p>
+                    </div>
+
+                    <div class="figure" data-page-node-id="F9ZAh7Gbz6hvZN1uN715Ci">
+                        <div class="figure-title" data-page-node-id="RocAKPn3uTH9sA321HPJ3r"><i class="fas fa-route" data-page-node-id="KPGVqbBLTyoItdavyEGpcF"></i>做空四步流程</div>
+                        <svg viewBox="0 0 640 250" role="img" aria-label="做空四步流程示意图：借入股票、高价卖出、低价买回、归还股票赚取差价" data-page-node-id="FAGi0ocZy1nSHagwrOOE4l">
+                            <g font-family="inherit" data-page-node-id="aeEWF2AuzpMcBvFlurBXbK">
+                                <!-- downward price line -->
+                                <polyline points="40,60 140,80 230,70 330,120 420,150 520,190 600,200" fill="none" stroke="#e5534b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="IUldT1zPeOKvaWzgdRqlVk"/>
+                                <!-- sell point -->
+                                <circle cx="140" cy="80" r="7" fill="#3b82f6" stroke="#fff" stroke-width="2" data-page-node-id="aHbR5w8okfCLU2uXDLzql3"/>
+                                <text x="140" y="62" font-size="12" font-weight="700" fill="#3b82f6" text-anchor="middle" data-page-node-id="JN4u1imVZlLQJzXkbzpJjz">① 借入并卖出 $100</text>
+                                <!-- buy point -->
+                                <circle cx="520" cy="190" r="7" fill="#20c997" stroke="#fff" stroke-width="2" data-page-node-id="KvGBWJYmFE3Tj899A5EjY6"/>
+                                <text x="520" y="222" font-size="12" font-weight="700" fill="#159a76" text-anchor="middle" data-page-node-id="FNt04tME2GqnkHkVoxQfgV">② 低价买回 $70</text>
+                                <!-- dashed connector showing price drop -->
+                                <line x1="150" y1="92" x2="510" y2="182" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 5" data-page-node-id="5LWFIt4URNBA4CYI4zKWid"/>
+                                <text x="330" y="128" font-size="12" font-weight="700" fill="#e5534b" text-anchor="middle" data-page-node-id="UVsz3TmdmpHDyDuklG0UCm">股价下跌 ↓</text>
+                                <!-- profit box -->
+                                <rect x="238" y="18" width="164" height="34" rx="17" fill="#e8f8f3" stroke="#bfe9d9" data-page-node-id="KSr2ywafPT613LctBLN66F"/>
+                                <text x="320" y="40" font-size="13" font-weight="700" fill="#159a76" text-anchor="middle" data-page-node-id="s50qerBvQ00Prdm5pj9Xn4">③ 归还股票，赚差价 $30</text>
+                                <!-- axis hint -->
+                                <text x="42" y="238" font-size="11" fill="#7b8ca3" data-page-node-id="BmCucnRxewUeaFUUJlwd3a">时间 →</text>
+                                <text x="600" y="46" font-size="11" fill="#7b8ca3" data-page-node-id="22AYit0cbebOVIV8ciIPJw">价格</text>
+                            </g>
+                        </svg>
+                        <figcaption data-page-node-id="sKXaFbAueLsnop5MJdyr4j">核心逻辑：高价卖出、低价买回，差价就是利润（上例未计借券利息与手续费）。</figcaption>
+                    </div>
+
+                    <div class="kv" data-page-node-id="EnGT0NRkSZzgSgaPgw0sI5">
+                        <div data-page-node-id="kj9H383x1Dc1OzGGsigjF8"><b data-page-node-id="rOWRMQ6X9PSStEWBkVkbVA"><i class="fas fa-arrow-up" data-page-node-id="EBKGlDU4v9CkKP2H9kJEhT"></i> 做多 Long</b><span data-page-node-id="B56iRo8MIEVTqAZx9VqoOq">低买高卖，看涨赚钱；亏损最多是本金归零。</span></div>
+                        <div data-page-node-id="BbA64z6rYKZjqvFak5khLM"><b data-page-node-id="U2hSketupQwK9LTI1iQb2N"><i class="fas fa-arrow-down" data-page-node-id="llGY3ydalSaJTW8XapOfbk"></i> 做空 Short</b><span data-page-node-id="sMgnouPyEgnvUS3ya31xLM">高卖低买，看跌赚钱；股价越涨亏得越多。</span></div>
+                    </div>
+
+                    <div class="callout risk" data-page-node-id="I2braUq2DDHC7CvEmfGFed">
+                        <i class="fas fa-triangle-exclamation" data-page-node-id="IAiz9UsD55C0mC8ESScqf8"></i>
+                        <div data-page-node-id="VHj7Zn6608IMTr3kr59C1I"><strong data-page-node-id="Kj5z3zjogterc4vz3HDiAJ">风险提示</strong>做空的理论亏损是"无限"的——股价可能一直上涨；还可能面临借券成本、强制平仓和"轧空（Short Squeeze）"。A 股融券做空门槛较高，美股、港股机制更成熟。做空专业性强，新手务必谨慎。</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ============ FOOTER ============ -->
+        <div class="contact" data-page-node-id="AXJhlBLhPQhMGv5vsfmgkF">
+            <h3 data-page-node-id="URLB4a4Q6wZhfQljJVvVhM">联系邮箱</h3>
+            <p data-page-node-id="qY2PYjMs3XpdFzAz9Bsab5">有问题、想交流，或发现攻略里的错误，欢迎写信给我</p>
+            <a href="mailto:do@fanslee.com" class="btn" data-page-node-id="hLzTPCDN8DQaOqAv4vgJ4D"><i class="fas fa-envelope" style="margin-right:8px" data-page-node-id="y8AuWQjXzj5O6UZyvtoDDY"></i>do@fanslee.com</a>
+            <p class="fineprint" data-page-node-id="kN18ugAouWoZFrSt7pxcqq">本页内容仅为知识科普，不构成任何投资建议。市场有风险，入市需谨慎，请独立判断并自行承担投资决策后果。</p>
         </div>
     </div>
 
-    <!-- 回到顶部按钮 -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部" data-page-node-id="0HhnpsMPgwqLoS1agZkomw"><i class="fas fa-chevron-up" data-page-node-id="9sbWHKUv6YnonXq3MPvtFp"></i></button>
 
-<script type="text/javascript" src="https://fanslee.com/x/js/x.js"></script>  
+    <script>
+        (function(){
+            var links = Array.prototype.slice.call(document.querySelectorAll('.category-link'));
+            var sections = links.map(function(l){ return document.querySelector(l.getAttribute('href')); });
+            var nav = document.getElementById('categoryNav');
+            var topBtn = document.getElementById('backToTop');
+
+            // 点击目录：高亮并把该按钮滚动到可视区中间
+            links.forEach(function(link, i){
+                link.addEventListener('click', function(){
+                    setActive(i);
+                    var lr = link.getBoundingClientRect(), nr = nav.getBoundingClientRect();
+                    if(lr.left < nr.left || lr.right > nr.right){
+                        nav.scrollTo({ left: link.offsetLeft - nav.clientWidth/2 + link.clientWidth/2, behavior:'smooth' });
+                    }
+                });
+            });
+
+            function setActive(i){
+                links.forEach(function(l,j){ l.classList.toggle('active', j===i); });
+            }
+
+            // 滚动时同步高亮当前章节
+            function onScroll(){
+                topBtn.classList.toggle('show', window.scrollY > 400);
+                var pos = window.scrollY + 140, cur = 0;
+                sections.forEach(function(s,i){ if(s && s.offsetTop <= pos) cur = i; });
+                setActive(cur);
+            }
+            window.addEventListener('scroll', onScroll, { passive:true });
+            onScroll();
+
+            topBtn.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+        })();
+    </script>
 </body>
 </html>
