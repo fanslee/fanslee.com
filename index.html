@@ -44,7 +44,7 @@
             background:var(--card);
             border-radius:24px;
             box-shadow:var(--shadow);
-            overflow:hidden;
+            /* 注意：此处不能用 overflow:hidden，否则会破坏内部 position:sticky */
             animation:fadeIn .8s ease-out;
         }
         @keyframes fadeIn{ from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
@@ -57,6 +57,7 @@
             text-align:center;
             position:relative;
             overflow:hidden;
+            border-radius:24px 24px 0 0;
         }
         header::after{
             content:"";position:absolute;inset:0;
@@ -93,7 +94,9 @@
 
         /* ===== Sticky nav ===== */
         .nav-wrap{ position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);
-            border-bottom:1px solid var(--line); }
+            border-bottom:1px solid var(--line);transition:box-shadow .25s ease,background .25s ease; }
+        .nav-wrap.is-stuck{ background:rgba(255,255,255,.97);box-shadow:0 8px 24px rgba(30,70,100,.12);
+            border-bottom-color:transparent; }
         .category-nav{ display:flex;gap:8px;overflow-x:auto;padding:12px 18px;scrollbar-width:none;scroll-behavior:smooth; }
         .category-nav::-webkit-scrollbar{ display:none; }
         .category-link{
@@ -220,7 +223,7 @@
         .legend i{ display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px; }
 
         /* ===== Footer ===== */
-        .contact{ background:linear-gradient(135deg,#f4f9fc,#eef5fa);text-align:center;padding:34px 24px 40px;border-top:1px solid var(--line); }
+        .contact{ background:linear-gradient(135deg,#f4f9fc,#eef5fa);text-align:center;padding:34px 24px 40px;border-top:1px solid var(--line);border-radius:0 0 24px 24px; }
         .contact h3{ font-size:1.2rem;margin-bottom:6px; }
         .contact p{ color:var(--muted);font-size:.9rem;margin-bottom:6px; }
         .btn{ display:inline-block;margin-top:14px;background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;
@@ -280,7 +283,8 @@
         @media (max-width:720px){
             body{ padding:10px; }
             .container{ border-radius:16px; }
-            header{ padding:32px 18px 26px; }
+            header{ padding:32px 18px 26px;border-radius:16px 16px 0 0; }
+            .contact{ border-radius:0 0 16px 16px; }
             header h1{ font-size:1.7rem; }
             .fanslee-logo{ width:86px;height:86px; }
             main{ padding:4px 16px 24px; }
@@ -316,7 +320,7 @@
         </header>
 
         <!-- ============ STICKY NAV ============ -->
-        <div class="nav-wrap" data-page-node-id="971XcLBgqq45Xopn7gJW27">
+        <div class="nav-wrap" id="navWrap" data-page-node-id="971XcLBgqq45Xopn7gJW27">
             <nav class="category-nav" id="categoryNav" aria-label="攻略目录" data-page-node-id="H9s9jxYYOeJDb0VTe5c9SF">
                 <a href="#s1" class="category-link active" data-page-node-id="M7Tfxw33bwz0NLNJfrRxNY"><span class="n" data-page-node-id="fsvHfqPpFgjgd0HvP3Nl4W">01</span>市场差别</a>
                 <a href="#s2" class="category-link" data-page-node-id="pZPEmusUwfjm6t4HHinVay"><span class="n" data-page-node-id="ivqFUBz5iH83b0RumAsECx">02</span>开户指南</a>
@@ -733,6 +737,7 @@
             var links = Array.prototype.slice.call(document.querySelectorAll('.category-link'));
             var sections = links.map(function(l){ return document.querySelector(l.getAttribute('href')); });
             var nav = document.getElementById('categoryNav');
+            var navWrap = document.getElementById('navWrap');
             var topBtn = document.getElementById('backToTop');
 
             // 点击目录：高亮并把该按钮滚动到可视区中间
@@ -753,6 +758,11 @@
             // 滚动时同步高亮当前章节
             function onScroll(){
                 topBtn.classList.toggle('show', window.scrollY > 400);
+                // 导航吸顶时加阴影反馈：sticky 元素贴顶时的 offsetTop 会大于 0
+                if(navWrap){
+                    var stuck = navWrap.getBoundingClientRect().top <= 0.5;
+                    navWrap.classList.toggle('is-stuck', stuck);
+                }
                 var pos = window.scrollY + 140, cur = 0;
                 sections.forEach(function(s,i){ if(s && s.offsetTop <= pos) cur = i; });
                 setActive(cur);
