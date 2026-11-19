@@ -3,7 +3,7 @@
 <head data-page-node-id="LaJdq3U7j4lOe6koMUyxoz">
     <meta charset="UTF-8" data-page-node-id="7N2p8vzoc71EqBljH3tOMj">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" data-page-node-id="YL7Y7NaJ7scuamcYqpXtTl">
-    <meta name="description" content="美股小白入门图文攻略：市场差别、开户指南、交易软件、期权、做空一次讲清楚。" data-page-node-id="3MoShipQ2ErbE9U1o4ltuZ">
+    <meta name="description" content="美股小白入门图文攻略：市场差别、开户指南、开户平台、期权、做空一次讲清楚。" data-page-node-id="3MoShipQ2ErbE9U1o4ltuZ">
     <title>fanslee李范思</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" data-page-node-id="btAcdXM4GSGGHC3E6IDHHn">
     <link rel="icon" href="https://fanslee.com/favicon.ico" type="image/x-icon" data-page-node-id="y0nnPH0pUNrQbsFvyvhMP5">
@@ -227,6 +227,45 @@
         .btn:hover{ transform:translateY(-3px);box-shadow:0 14px 28px rgba(32,201,151,.42); }
         .fineprint{ font-size:.74rem;color:var(--muted);margin-top:20px;max-width:620px;margin-left:auto;margin-right:auto; }
 
+        /* policy alert */
+        .policy-alert{ display:flex;gap:12px;background:linear-gradient(135deg,#fff6f5,#ffeceb);
+            border:1px solid #f6cbc6;border-left:5px solid var(--red);border-radius:14px;
+            padding:16px 18px;margin-bottom:20px; }
+        .policy-alert .pa-ic{ flex:0 0 auto;width:40px;height:40px;border-radius:12px;background:#ffe1dd;
+            color:var(--red);display:flex;align-items:center;justify-content:center;font-size:1.15rem; }
+        .policy-alert h4{ color:#b5352e;font-size:1rem;margin-bottom:4px; }
+        .policy-alert p{ font-size:.87rem;color:#8a4a44; }
+        .policy-alert p strong{ color:#b5352e; }
+
+        /* group heading */
+        .group-h{ display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:26px 0 14px; }
+        .group-h:first-child{ margin-top:4px; }
+        .group-h .gh-bar{ width:5px;height:20px;border-radius:3px;background:var(--green);flex:0 0 auto; }
+        .group-h h4{ font-size:1.05rem; }
+        .gh-badge{ font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:50px; }
+        .gh-badge.ok{ background:var(--green-l);color:var(--green-d); }
+        .gh-badge.no{ background:#eef1f5;color:#7b8ca3; }
+        .gh-badge.safe{ background:#eaf3ff;color:#1d5b96; }
+
+        /* app card requirement line */
+        .app-card .req{ margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);
+            font-size:.8rem;color:var(--ink-2); }
+        .app-card .req b{ color:var(--green-d); }
+        .app-card .req i{ color:var(--muted);margin-right:5px; }
+        .app-card .open-link{ display:inline-flex;align-items:center;gap:5px;margin-top:11px;
+            font-size:.78rem;font-weight:600;color:var(--green-d);text-decoration:none;
+            border:1px solid var(--green);border-radius:50px;padding:4px 12px;transition:all .2s ease; }
+        .app-card .open-link:hover{ background:var(--green);color:#fff;transform:translateY(-2px); }
+
+        /* closed platforms */
+        .closed-list{ display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px; }
+        .closed-item{ background:#f5f7fa;border:1px solid #e7ecf2;border-radius:12px;padding:12px 14px;
+            display:flex;align-items:center;gap:10px; }
+        .closed-item .ci-ic{ width:32px;height:32px;border-radius:9px;background:#e9edf2;color:#8b98a8;
+            display:flex;align-items:center;justify-content:center;font-size:.9rem;flex:0 0 auto; }
+        .closed-item b{ font-size:.9rem;color:#64748b;display:block;line-height:1.3; }
+        .closed-item small{ font-size:.72rem;color:#94a3b8; }
+
         /* back to top */
         .back-to-top{ position:fixed;bottom:26px;right:26px;width:52px;height:52px;border-radius:50%;
             background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;border:none;cursor:pointer;
@@ -271,7 +310,7 @@
             <span class="kicker" data-page-node-id="9C0cIWNZW9QNMqzyBH3DbO"><i class="fas fa-book-open" style="margin-right:6px" data-page-node-id="vfx2wpfAyy6O5RC4TPXVbS"></i>小白入门 · 图文攻略</span>
             <h1 data-page-node-id="mpTkGaqHttwj1uDzMQ3yzA">fanslee李范思</h1>
             <p class="title" data-page-node-id="VGJ2CYM6kEEgXOMgdyzoDD">你的美股好搭子</p>
-            <p class="lead-sub" data-page-node-id="BNC59vaGz6RHyMHXrHRzkZ">从零开始，用一张图、一段话讲清楚美股入门最常见的 5 个问题。</p>
+            <p class="lead-sub" data-page-node-id="BNC59vaGz6RHyMHXrHRzkZ">从零开始，用一张图、一段话讲清楚美股入门最常见的 6 个问题。</p>
         </header>
 
         <!-- ============ STICKY NAV ============ -->
@@ -279,9 +318,10 @@
             <nav class="category-nav" id="categoryNav" aria-label="攻略目录" data-page-node-id="H9s9jxYYOeJDb0VTe5c9SF">
                 <a href="#s1" class="category-link active" data-page-node-id="M7Tfxw33bwz0NLNJfrRxNY"><span class="n" data-page-node-id="fsvHfqPpFgjgd0HvP3Nl4W">01</span>市场差别</a>
                 <a href="#s2" class="category-link" data-page-node-id="pZPEmusUwfjm6t4HHinVay"><span class="n" data-page-node-id="ivqFUBz5iH83b0RumAsECx">02</span>开户指南</a>
-                <a href="#s3" class="category-link" data-page-node-id="iTbZyGiLEs6aPojLMzxGjb"><span class="n" data-page-node-id="1beyAmxxVJCP6OH4kwyfyO">03</span>交易软件</a>
-                <a href="#s4" class="category-link" data-page-node-id="zhsTrm5IWUousf9vcHYPbu"><span class="n" data-page-node-id="fBLnV4LOAIfnzMOdXbTkxN">04</span>什么是期权</a>
-                <a href="#s5" class="category-link" data-page-node-id="syEJHcOtR8GwvVKbq9sEX2"><span class="n" data-page-node-id="BS4LV9n4XBsvDssATX3vHH">05</span>什么是做空</a>
+                <a href="#s3bank" class="category-link"><span class="n">03</span>境外银行开户</a>
+                <a href="#s3" class="category-link" data-page-node-id="iTbZyGiLEs6aPojLMzxGjb"><span class="n" data-page-node-id="1beyAmxxVJCP6OH4kwyfyO">04</span>开户平台</a>
+                <a href="#s4" class="category-link" data-page-node-id="zhsTrm5IWUousf9vcHYPbu"><span class="n" data-page-node-id="fBLnV4LOAIfnzMOdXbTkxN">05</span>什么是期权</a>
+                <a href="#s5" class="category-link" data-page-node-id="syEJHcOtR8GwvVKbq9sEX2"><span class="n" data-page-node-id="BS4LV9n4XBsvDssATX3vHH">06</span>什么是做空</a>
             </nav>
         </div>
 
@@ -358,7 +398,7 @@
                     <div class="sec-badge" data-page-node-id="M8YiPweQEUccurwMsmg3jY">02</div>
                     <div class="sec-titles" data-page-node-id="SCiHLE7jGNVAq6JvKSavPB">
                         <h3 data-page-node-id="TXfS4agkHpRa0kN7AdCLRN">中国居民怎么开户？</h3>
-                        <p data-page-node-id="ri8aFrRxlrWRDh7QZBDR5V">通过持牌券商在线申请即可，一般 1–3 个工作日出结果。</p>
+                        <p data-page-node-id="ri8aFrRxlrWRDh7QZBDR5V">2026 监管收紧后，"先办卡、再开户"已是标准路径，全程通常需 1–3 周。</p>
                     </div>
                 </div>
                 <div class="sec-body" data-page-node-id="qjlvy2wCSoBgjHDxwbLxRo">
@@ -366,25 +406,25 @@
                     <div class="figure" data-page-node-id="G3MErJ67RBIK1KWPakCd9s">
                         <div class="figure-title" data-page-node-id="Sp30dk4wDiFVoOQIT6ADvd"><i class="fas fa-list-ol" data-page-node-id="HbNCGFLDnB8XZISNiv9m6o"></i>开户五步流程</div>
                         <div class="steps" data-page-node-id="XdhBJ0iLmdlHoq1zUmvDPJ">
-                            <div class="step" data-page-node-id="sLcbgh6Arn8pxyCwIRTOwR"><div class="step-num" data-page-node-id="lsd8bqYv5iuhlI1dRbzeXz">1</div><div class="step-content" data-page-node-id="BSUjzEhXtMBbqmkCUzkpap">
-                                <h4 data-page-node-id="1sx3bkUOxXIdncixDTCfHx"><i class="fas fa-shield-alt ic" data-page-node-id="VtHHaGS4vIM8x160N2vRUu"></i>选券商</h4>
-                                <p data-page-node-id="KHp7PZcXfPYizu3jcDXNgE">选择持有正规牌照、受监管的券商，先确认监管与资金安全。</p>
+                            <div class="step"><div class="step-num">1</div><div class="step-content">
+                                <h4><i class="fas fa-credit-card ic"></i>开通港卡或境外银行卡</h4>
+                                <p>这是入金的前提。赴港现场办理，或在香港境内用中银香港、汇丰、众安 ZA 等 APP 线上开户；需带身份证、港澳通行证、入境小票（下方有推荐名单）。</p>
                             </div></div>
-                            <div class="step" data-page-node-id="AE6gMX3656FeXZGFDu9PXa"><div class="step-num" data-page-node-id="umMWEzYKVMBxaC7W0bkbxi">2</div><div class="step-content" data-page-node-id="FGwLpv9FwS81D67qMSJvlJ">
-                                <h4 data-page-node-id="AojadcO0bLJ1LMIXkgNs4b"><i class="fas fa-id-card ic" data-page-node-id="oETJ84JkJwIc66kRpT25x3"></i>备材料</h4>
-                                <p data-page-node-id="qs9SDJTAJPAqHDdj4RG5sV">本人身份证或护照、本人银行卡、常用手机号；部分券商还需地址证明（如近 3 个月账单）。</p>
+                            <div class="step"><div class="step-num">2</div><div class="step-content">
+                                <h4><i class="fas fa-shield-alt ic"></i>选券商</h4>
+                                <p>选择持有正规牌照、目前仍接受内地身份新开户的券商，先确认监管与资金安全。</p>
                             </div></div>
-                            <div class="step" data-page-node-id="kjs9iVe86u38QQX4cFBAHQ"><div class="step-num" data-page-node-id="YwZ1flOU7juZKvDxguQuhv">3</div><div class="step-content" data-page-node-id="93mDfJxfQYyIgeRzgUsQws">
-                                <h4 data-page-node-id="8p439A7AdEsw7eNt7SYzwx"><i class="fas fa-mobile-alt ic" data-page-node-id="5LAzHHPn3cvuEBSFs7lXHz"></i>在线申请</h4>
-                                <p data-page-node-id="K6lfRWOdDkhN2InJNxwCF6">下载券商 APP 填写资料，上传证件完成 KYC 身份认证，并做风险承受测评。</p>
+                            <div class="step"><div class="step-num">3</div><div class="step-content">
+                                <h4><i class="fas fa-id-card ic"></i>备材料</h4>
+                                <p>本人身份证或护照、刚办好的境外银行卡、常用手机号；部分券商还需地址证明（如近 3 个月账单）。</p>
                             </div></div>
-                            <div class="step" data-page-node-id="w9avsfOYJwXktatM7uK7j4"><div class="step-num" data-page-node-id="hm86Pb71e1H3kFfga8YamA">4</div><div class="step-content" data-page-node-id="3Ik1h0ZEqtA7z9FihGKQqB">
-                                <h4 data-page-node-id="WUIkx3utZt2f1QppQWFqak"><i class="fas fa-circle-check ic" data-page-node-id="IosWOJdZ7imAB8sewFPNPE"></i>等待审核</h4>
-                                <p data-page-node-id="g99qt8ca85MBlPYKydgVZZ">提交后等待审核，通常需要 1–3 个工作日，进度可在 APP 内查看。</p>
+                            <div class="step"><div class="step-num">4</div><div class="step-content">
+                                <h4><i class="fas fa-mobile-alt ic"></i>在线申请</h4>
+                                <p>下载券商 APP 填写资料，上传证件完成 KYC 身份认证，并做风险承受测评。</p>
                             </div></div>
-                            <div class="step" data-page-node-id="XpAIKJRlFeUaVMFBaf3wr3"><div class="step-num" data-page-node-id="3lKUVb5JoErOjhcyAgSvjR">5</div><div class="step-content" data-page-node-id="aJBYoGdFOX9oMDEUUXafG4">
-                                <h4 data-page-node-id="rlbi4qXxUkIpWCRhk2HuLS"><i class="fas fa-exchange-alt ic" data-page-node-id="1Ouy4wt7ximoAtBMzGYAsB"></i>入金激活</h4>
-                                <p data-page-node-id="cAlhtaBCzECcFTzcZr4X6f">审核通过后按指引跨境汇款入金，资金到账即可开始交易。</p>
+                            <div class="step"><div class="step-num">5</div><div class="step-content">
+                                <h4><i class="fas fa-circle-check ic"></i>审核 + 入金激活</h4>
+                                <p>提交后等待 1–3 个工作日审核；通过后用本人同名境外卡入金，资金到账即可开始交易。</p>
                             </div></div>
                         </div>
                     </div>
@@ -396,53 +436,140 @@
                 </div>
             </section>
 
-            <!-- ========== 3. 交易软件 ========== -->
+            <!-- ========== 3. 境外银行开户 ========== -->
+            <section class="section" id="s3bank">
+                <div class="sec-head">
+                    <div class="sec-badge">03</div>
+                    <div class="sec-titles">
+                        <h3>境外银行开户（港卡 / 境外卡）</h3>
+                        <p>开境外券商账户前，先办一张本人名下的香港银行卡——这是入金交易的必备前提。</p>
+                    </div>
+                </div>
+                <div class="sec-body">
+                    <div class="cards">
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg1">中</div><div class="app-name">中银香港<small>BOCHK · 首选</small></div></div>
+                            <p>内地居民最友好，普通话通行，网点多；与内地中行账户联动顺滑，跨境汇款手续费低。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>办理：</b>赴港 APP 开 i-Free 基础户（免月费），或内地中行见证开户</div>
+                            <a href="https://www.bochk.com/" target="_blank" rel="noopener" class="open-link">前往官网开户 <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg2">汇</div><div class="app-name">汇丰 One<small>HSBC · 全球转账强</small></div></div>
+                            <p>多币种账户、全球转账网络强，适合有全球资产配置需求的用户。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>办理：</b>本人赴港 APP 申请，约 1 万港币激活；卓越理财内地见证需 50 万资产</div>
+                            <a href="https://www.hsbc.com.hk/" target="_blank" rel="noopener" class="open-link">前往官网开户 <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg3">ZA</div><div class="app-name">众安银行<small>ZA Bank · 虚拟银行</small></div></div>
+                            <p>纯线上、0 门槛，人在香港用 APP 几分钟开户，无实体卡，适合先开轻量账户过渡。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>办理：</b>需人在香港境内 + 港澳通行证 + 入境记录；单日限额约 10 万港币</div>
+                            <a href="https://www.zabank.com.hk/" target="_blank" rel="noopener" class="open-link">前往官网开户 <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg4">渣</div><div class="app-name">渣打 / 工银亚洲<small>备选</small></div></div>
+                            <p>渣打对内地客户相对友好、部分城市支持视频见证；工银亚洲与内地工行联动、VTM 可当场领卡。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>办理：</b>港澳通行证 + 近 3 个月税单/社保记录，视银行要求而定</div>
+                            <a href="https://www.sc.com/hk/" target="_blank" rel="noopener" class="open-link">渣打官网 <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            <a href="https://www.icbcasia.com/" target="_blank" rel="noopener" class="open-link" style="margin-left:6px">工银亚洲官网 <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="callout tip">
+                        <i class="fas fa-info-circle"></i>
+                        <div><strong>办卡要点</strong>2026 年 HKMA 已更新客户尽职调查要求，没有"无条件开户"：必备身份证、港澳通行证（签注有效）、入境小票、内地手机号，部分银行要近 3 个月地址证明。用途如实说明、材料自洽比存款数字更重要；切勿使用中介包装的虚假材料。以上链接为各银行官网，具体入口与门槛以官网为准。</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== 4. 开户平台 ========== -->
             <section class="section" id="s3" data-page-node-id="hWgk3c9TDG5lfXGhixUDfN">
                 <div class="sec-head" data-page-node-id="y47msASCp2rOsJqAWu91Gh">
-                    <div class="sec-badge" data-page-node-id="AuHJgjCwUY2tN2kXLhK0Ea">03</div>
+                    <div class="sec-badge" data-page-node-id="AuHJgjCwUY2tN2kXLhK0Ea">04</div>
                     <div class="sec-titles" data-page-node-id="aiYj39ifwnC8wDlTIm7Wq0">
-                        <h3 data-page-node-id="vL5EUZfHx77YoL7idLTQCZ">哪些交易软件适合中国居民？</h3>
-                        <p data-page-node-id="YPopBAha0ra0b7qwPL90lQ">按"监管牌照 + 中文服务 + 入金便利 + 费率"四个维度来挑。</p>
+                        <h3 data-page-node-id="vL5EUZfHx77YoL7idLTQCZ">内地用户还能新开哪些平台？</h3>
+                        <p data-page-node-id="YPopBAha0ra0b7qwPL90lQ">2026 监管收紧后的现状：只有内地身份证、没有港澳台或海外身份，可选范围已大幅缩小。</p>
                     </div>
                 </div>
                 <div class="sec-body" data-page-node-id="o2Lbf2RG4FBmh6JgfCPAFy">
 
-                    <div class="cards" data-page-node-id="23GpkkYxHhGz6amZbEId2I">
-                        <div class="app-card" data-page-node-id="40qMQsUrWqyPpOd8iswgP9">
-                            <div class="app-top" data-page-node-id="NwxI8YVunelMHrHOHhgK1D"><div class="app-logo lg1" data-page-node-id="HQAkwe7OtnG4vg8ivLNd3T">IB</div><div class="app-name" data-page-node-id="obITtNWqPSPkoEPyCp5GXG">盈透证券<small data-page-node-id="1aTLcc3SdnA4AxgdQfIFQs">Interactive Brokers</small></div></div>
-                            <p data-page-node-id="uSHVc67AmyUHeqcrmbDaka">全球市场覆盖广、费率低、交易品种全，适合想做多市场的进阶用户。</p>
-                            <div class="tags" data-page-node-id="mWY3KHM8BiVD8uaKSD6vr6"><span class="tag" data-page-node-id="FqY2fF2CYEa0q6wRy4ZDJI">全球市场</span><span class="tag" data-page-node-id="uwvqXYoDsVuCvS66fw6Ubb">低费率</span><span class="tag" data-page-node-id="FopAxzioIDbrHWRuYIVMN3">进阶</span></div>
-                        </div>
-                        <div class="app-card" data-page-node-id="eGGp42pgrXwTQmNmTaLXlw">
-                            <div class="app-top" data-page-node-id="FYKUzA9QcG1c7F1iVMxCcj"><div class="app-logo lg2" data-page-node-id="qrJbqi0mNzx3eDipROlCS4">富</div><div class="app-name" data-page-node-id="Cix59y5hdzk7nuIVyuU1Wt">富途牛牛<small data-page-node-id="JBQ3wYZVFwBrJAxW936CZt">Futu / Moomoo</small></div></div>
-                            <p data-page-node-id="uiCgmP2IblmFQCbyUSYzSt">中文体验友好，港美股一站式，行情、资讯与社区功能完善。</p>
-                            <div class="tags" data-page-node-id="93AcKJPVbnzMRUCLEfkj9T"><span class="tag" data-page-node-id="DS0sLVxCroCaKj21wesemD">中文友好</span><span class="tag" data-page-node-id="knyR1oKZSjVDLGWBGDc9WP">港美股</span><span class="tag" data-page-node-id="SbQodOtHXYXP6DLTITtyB4">新手</span></div>
-                        </div>
-                        <div class="app-card" data-page-node-id="rjfRN1EzLwSeG6dJFYJdKm">
-                            <div class="app-top" data-page-node-id="VZ0cS5o0s06s8PmmihnKdC"><div class="app-logo lg3" data-page-node-id="tvxUaXNCP1BQhL4ZPAMMrt">老</div><div class="app-name" data-page-node-id="YGs3KZPYEHjye16OEwJ5Vf">老虎证券<small data-page-node-id="SkOGC14CHqjxlooo5OzXEZ">Tiger Brokers</small></div></div>
-                            <p data-page-node-id="vsMCOKhinbvStJyiqx7Q52">中文服务到位，覆盖美股、港股及期货，开户与入金指引清晰。</p>
-                            <div class="tags" data-page-node-id="Hc1p1adBf4LMPlPF3ZsWO5"><span class="tag" data-page-node-id="eM1f9PiLCgNPkE7hYoC02y">中文服务</span><span class="tag" data-page-node-id="IJVxYW0uWQKjrjZ0va0eKP">港美股</span><span class="tag" data-page-node-id="lIxQu6mmdYq78gsI3vGtCp">期货</span></div>
-                        </div>
-                        <div class="app-card" data-page-node-id="ZXJy21A8NTfSQtIJqDfhA4">
-                            <div class="app-top" data-page-node-id="ErOrWzp5LOE8axScmESiqI"><div class="app-logo lg4" data-page-node-id="cSIQIHDwNAGWDB8N4flsVx">长</div><div class="app-name" data-page-node-id="QLKahbx6OD1A1as4KqDoEv">长桥证券<small data-page-node-id="mTsM7qE3dzAegPA1N2h3nE">Longbridge</small></div></div>
-                            <p data-page-node-id="NOxpSXQnJSxhPRkHCOmtHG">港美股交易，社区与资讯内容丰富，界面简洁适合入门。</p>
-                            <div class="tags" data-page-node-id="EKy6bi3CvGrFrT59LqIvQm"><span class="tag" data-page-node-id="keOPBWh5zMyY5pa5l1sF2z">港美股</span><span class="tag" data-page-node-id="DyYT5r4GqTJenXm24DiNh2">社区资讯</span><span class="tag" data-page-node-id="ZL6XpkSck3wxHhH7WMHBfG">简洁</span></div>
-                        </div>
-                        <div class="app-card" data-page-node-id="Q4rLv8JkRbHKkTlGLDsJPJ">
-                            <div class="app-top" data-page-node-id="uvzs8bzT8ADDNCENDMbB1P"><div class="app-logo lg5" data-page-node-id="5qnYgbzrHtLYuseHBYN0MV">A</div><div class="app-name" data-page-node-id="KRxrZuLQKhEi8bg1p7XWJ9">境内券商 APP<small data-page-node-id="XWQULZz63yE1e2onWmBXdx">如华泰、中信等</small></div></div>
-                            <p data-page-node-id="8YJNcyydAH3Peyya57Qmkg">开 A 股账户、通过港股通交易港股，人民币入金便捷、合规省心。</p>
-                            <div class="tags" data-page-node-id="lnCbC5d0x0yiAkXQAIuO7I"><span class="tag" data-page-node-id="GWRKSL1ig3wyDSDRGKMRMN">A股</span><span class="tag" data-page-node-id="3AHaac39wlU2N2DmnJ9YVq">港股通</span><span class="tag" data-page-node-id="G5Qm49HddLINnlKHTcIZCX">人民币入金</span></div>
-                        </div>
-                        <div class="app-card" data-page-node-id="iWUHoZi0uzL1ShPrdl3mbx">
-                            <div class="app-top" data-page-node-id="27KZ1jVfqpRPPWn6VtxnRk"><div class="app-logo lg6" data-page-node-id="AI4DAQO4k9YtAg72MGn2XG">TV</div><div class="app-name" data-page-node-id="Yk60hl8MTF6BS1Wd5FsDD5">TradingView<small data-page-node-id="h6arVdXimM1YRZXbHACfQ4">看图分析工具</small></div></div>
-                            <p data-page-node-id="lXIOFPejORPGWs0oHZCb71">强大的图表与技术分析工具（非券商），适合看盘、画线、找思路。</p>
-                            <div class="tags" data-page-node-id="73wRZdGGUohpIfy1COAYGd"><span class="tag" data-page-node-id="uOxGar0VVf5SFWOUa0znTs">图表分析</span><span class="tag" data-page-node-id="IdDfykQHNnBjIKYjqe6QCQ">看盘</span><span class="tag" data-page-node-id="LEKltIIiC8dfyivSVmVBZ6">辅助工具</span></div>
+                    <div class="policy-alert">
+                        <div class="pa-ic"><i class="fas fa-triangle-exclamation"></i></div>
+                        <div>
+                            <h4>先看政策背景（2026 年 5 月起）</h4>
+                            <p>证监会等八部门联合印发《综合整治非法跨境证券期货基金经营活动实施方案》。<strong>富途、老虎、长桥、微牛等已停止内地身份新开户</strong>，存量账户自 2026 年 6 月起只可卖出、出金，不可买入或入金，两年集中整治期后境内服务将关停。市场上传闻"还能开"的多为中介揽客，请勿轻信。</p>
                         </div>
                     </div>
 
-                    <div class="callout tip" data-page-node-id="D1k60wJ3F2GD2yJoGrIMDp">
-                        <i class="fas fa-check-circle" data-page-node-id="CkvcXsl6CoGj62VBNj8zsC"></i>
-                        <div data-page-node-id="2sWfadIlj7vQRqFvrT59cD"><strong data-page-node-id="5xzJqMz3oQsEx7jqoLyZZC">怎么选不踩坑</strong>优先看：① 是否持牌受监管；② 是否有中文客服；③ 入金出金是否方便、费率是否透明；④ 是否支持你想交易的市场与品种。具体以各平台官方信息为准，此处仅作科普，不构成推荐。</div>
+                    <div class="group-h"><span class="gh-bar"></span><h4>仍可用内地身份证新开户（多需境外银行卡）</h4><span class="gh-badge ok">可尝试</span></div>
+                    <div class="cards">
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg1">复</div><div class="app-name">复星证券<small>星财富 · Fosun</small></div></div>
+                            <p>香港持牌券商，中文 App 体验接近原富途，覆盖港美股、美债、期权。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>开户要求：</b>身份证 + 境内银行卡验证，需境外银行卡出入金、境外 IP</div>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg4">盈</div><div class="app-name">盈立证券<small>uSMART · 周大福控股</small></div></div>
+                            <p>交易品种丰富，除港美股外还支持日股、英股、新加坡股，有新加坡主体版本。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>开户要求：</b>身份证 + +86 手机号，需境外银行卡出入金、境外 IP</div>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg3">致</div><div class="app-name">致富证券<small>Chief · 47 年港资券商</small></div></div>
+                            <p>老牌香港券商，适合新手，覆盖港股、美股及美股期权。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>开户要求：</b>身份证 + 境外银行卡出入金，开户时检查境外 IP</div>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg2">云</div><div class="app-name">云锋有鱼证券<small>云锋金融</small></div></div>
+                            <p>云锋金融旗下，开户流程较方便，覆盖港股、美股。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>开户要求：</b>身份证 + 香港或境外银行卡</div>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg5">腾</div><div class="app-name">腾达证券<small>GigaMoney</small></div></div>
+                            <p>APP 体验较好，主打港美股交易，常有免佣活动。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>开户要求：</b>身份证 + 香港或境外银行卡</div>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg6">嘉</div><div class="app-name">嘉信理财<small>Charles Schwab</small></div></div>
+                            <p>美国本土头部券商，美股及 ETF 零佣金，适合长期持有、不炒短线。</p>
+                            <div class="req"><i class="fas fa-id-card"></i><b>开户要求：</b>护照或身份证 + 大陆地址证明，线上申请（审核趋严）</div>
+                        </div>
+                    </div>
+
+                    <div class="callout tip">
+                        <i class="fas fa-info-circle"></i>
+                        <div><strong>为什么都要境外银行卡？</strong>内地银行卡无法直接给境外券商入金，且个人 5 万美元购汇额度<strong>不得用于境外证券投资</strong>。所以"能开户"和"能合规入金交易"是两回事——这也是这类渠道的核心风险点。政策变动频繁，务必以各平台官网最新要求为准。</div>
+                    </div>
+
+                    <div class="group-h"><span class="gh-bar" style="background:#94a3b8"></span><h4>已停止内地身份新开户</h4><span class="gh-badge no">仅存量可卖出</span></div>
+                    <div class="closed-list">
+                        <div class="closed-item"><div class="ci-ic"><i class="fas fa-ban"></i></div><div><b>富途证券</b><small>存量只卖不买</small></div></div>
+                        <div class="closed-item"><div class="ci-ic"><i class="fas fa-ban"></i></div><div><b>老虎证券</b><small>2023 年起已停</small></div></div>
+                        <div class="closed-item"><div class="ci-ic"><i class="fas fa-ban"></i></div><div><b>长桥证券</b><small>存量只卖不买</small></div></div>
+                        <div class="closed-item"><div class="ci-ic"><i class="fas fa-ban"></i></div><div><b>微牛证券</b><small>已停止内地开户</small></div></div>
+                        <div class="closed-item"><div class="ci-ic"><i class="fas fa-ban"></i></div><div><b>moomoo</b><small>仅限指定国家居民</small></div></div>
+                        <div class="closed-item"><div class="ci-ic"><i class="fas fa-ban"></i></div><div><b>盈透 IBKR</b><small>需境外居住/工作证明</small></div></div>
+                    </div>
+
+                    <div class="group-h"><span class="gh-bar" style="background:#3b82f6"></span><h4>完全合规、无需境外账户的替代渠道</h4><span class="gh-badge safe">监管引导</span></div>
+                    <div class="cards">
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg5">E</div><div class="app-name">QDII 基金 / 场内跨境 ETF<small>人民币直接买</small></div></div>
+                            <p>零门槛，约 10 元起投。A 股账户即可买纳指、标普 500 等 ETF，部分支持 T+0，无需换汇和境外开户。</p>
+                            <div class="req"><i class="fas fa-check"></i><b>适合：</b>定投指数、不想折腾境外账户；缺点是不能买个股</div>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg2">港</div><div class="app-name">港股通<small>境内券商开通</small></div></div>
+                            <p>用人民币交易港股，资金闭环受境内监管，是普通投资者买港股的主流渠道。</p>
+                            <div class="req"><i class="fas fa-check"></i><b>门槛：</b>证券账户及资金账户资产合计不低于 50 万元</div>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-top"><div class="app-logo lg5">理</div><div class="app-name">跨境理财通<small>大湾区专属</small></div></div>
+                            <p>通过银行购买港澳持牌机构发行的合规理财、基金产品，全程受监管保护。</p>
+                            <div class="req"><i class="fas fa-check"></i><b>门槛：</b>大湾区 9 市居民，满足投资经验与资产要求</div>
+                        </div>
+                    </div>
+
+                    <div class="callout risk">
+                        <i class="fas fa-shield-halved"></i>
+                        <div><strong>避坑提醒</strong>不要相信"代开户""借身份开户""内部通道"等中介说法——账户不在本人名下，资金安全没有任何保障，还可能触犯外汇和证券法规。本板块信息仅为科普整理，政策变动频繁，不构成任何开户推荐，请以监管机构与平台官方公告为准。</div>
                     </div>
                 </div>
             </section>
@@ -450,7 +577,7 @@
             <!-- ========== 4. 期权 ========== -->
             <section class="section" id="s4" data-page-node-id="YVIIhgbrGG0ADdZVMu14o9">
                 <div class="sec-head" data-page-node-id="TCAbFiwM3mV2qY21iSOhjg">
-                    <div class="sec-badge" data-page-node-id="S7JUZCi04ybckPLc0OiOFK">04</div>
+                    <div class="sec-badge" data-page-node-id="S7JUZCi04ybckPLc0OiOFK">05</div>
                     <div class="sec-titles" data-page-node-id="hqX8ySB0IrGNxwYlkY1xZW">
                         <h3 data-page-node-id="OD9pYifXFFO7MYHB2zFpo5">什么是期权？</h3>
                         <p data-page-node-id="T1vXStiuWBuVNmdSP3MB25">一种"权利"合约：买方付一笔权利金，换来未来按约定价买入或卖出的选择权。</p>
@@ -540,7 +667,7 @@
             <!-- ========== 5. 做空 ========== -->
             <section class="section" id="s5" data-page-node-id="mY78IjwT7BLLL4VLDsTopi">
                 <div class="sec-head" data-page-node-id="6kkqMHgKPaqa3ekEicfMfH">
-                    <div class="sec-badge" data-page-node-id="jrtYfAdW1L3Z6sHvmlhlfM">05</div>
+                    <div class="sec-badge" data-page-node-id="jrtYfAdW1L3Z6sHvmlhlfM">06</div>
                     <div class="sec-titles" data-page-node-id="Ze61AJPE9H4wREtzwHIoOF">
                         <h3 data-page-node-id="fA3eL2wHLOTcrvp5YFt5Fd">什么是做空？</h3>
                         <p data-page-node-id="10vsP8nEJOMAl9PD1jmWnc">做多"低买高卖"，做空则是"高卖低买"——赚的是股价下跌的钱。</p>
@@ -597,7 +724,8 @@
             <h3 data-page-node-id="URLB4a4Q6wZhfQljJVvVhM">联系邮箱</h3>
             <p data-page-node-id="qY2PYjMs3XpdFzAz9Bsab5">有问题、想交流，或发现攻略里的错误，欢迎写信给我</p>
             <a href="mailto:do@fanslee.com" class="btn" data-page-node-id="hLzTPCDN8DQaOqAv4vgJ4D"><i class="fas fa-envelope" style="margin-right:8px" data-page-node-id="y8AuWQjXzj5O6UZyvtoDDY"></i>do@fanslee.com</a>
-            <p class="fineprint" data-page-node-id="kN18ugAouWoZFrSt7pxcqq">本页内容仅为知识科普，不构成任何投资建议。市场有风险，入市需谨慎，请独立判断并自行承担投资决策后果。</p>
+            <p class="fineprint" data-page-node-id="kN18ugAouWoZFrSt7pxcqq">本页内容仅为知识科普，不构成任何投资建议。</p>
+			<p class="fineprint" data-page-node-id="kN18ugAouWoZFrSt7pxcqq">市场有风险，入市需谨慎，请独立判断并自行承担投资决策后果。</p>
         </div>
     </div>
 
