@@ -279,6 +279,60 @@
         .back-to-top.show{ opacity:1;visibility:visible; }
         .back-to-top:hover{ transform:translateY(-4px); }
 
+        /* ===== Nasdaq chart ===== */
+        .nq{ margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+            padding:20px;box-shadow:0 6px 18px rgba(32,90,120,.07); }
+        .nq-head{ display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px; }
+        .nq-title{ display:flex;align-items:center;gap:10px;font-size:1.05rem;font-weight:800;color:var(--ink); }
+        .nq-title i{ color:var(--purple); }
+        .nq-price{ display:flex;align-items:baseline;gap:10px;margin-top:6px;flex-wrap:wrap; }
+        .nq-price b{ font-size:1.7rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1; }
+        .nq-price span{ font-size:.9rem;font-weight:700;font-variant-numeric:tabular-nums; }
+        .nq-filters{ display:flex;flex-direction:column;gap:8px;align-items:flex-end; }
+        .nq-frow{ display:flex;align-items:center;gap:8px;flex-wrap:wrap; }
+        .nq-label{ font-size:.72rem;color:var(--muted); }
+        .nq-tabs{ display:inline-flex;background:var(--bg1);border-radius:50px;padding:3px;gap:2px;flex-wrap:wrap; }
+        .nq-tab{ border:0;background:transparent;color:var(--ink-2);font-size:.78rem;font-weight:600;
+            padding:5px 12px;border-radius:50px;cursor:pointer;transition:all .2s ease; }
+        .nq-tab:hover{ color:var(--green-d); }
+        .nq-tab.active{ background:var(--purple);color:#fff;box-shadow:0 3px 8px rgba(139,108,224,.3); }
+        .nq-plot{ position:relative;width:100%;height:260px; }
+        .nq-plot svg{ width:100%;height:100%;display:block;touch-action:none; }
+        .nq-loading{ position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+            font-size:.85rem;color:var(--muted); }
+        .nq-tip{ position:absolute;pointer-events:none;background:rgba(36,59,83,.94);color:#fff;
+            font-size:.72rem;line-height:1.6;padding:7px 10px;border-radius:8px;white-space:nowrap;
+            transform:translate(-50%,-115%);opacity:0;transition:opacity .15s ease;z-index:3; }
+        .nq-foot{ display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:12px; }
+        .nq-note{ font-size:.74rem;color:var(--muted); }
+
+        /* ===== Magnificent 7 quote board ===== */
+        .m7{ margin-top:26px;background:linear-gradient(135deg,#f7fbff,#eef5fb);
+            border:1px solid var(--line);border-radius:var(--radius);padding:20px;
+            box-shadow:0 6px 18px rgba(32,90,120,.07); }
+        .m7-head{ display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px; }
+        .m7-title{ display:flex;align-items:center;gap:10px;font-size:1.05rem;font-weight:800;color:var(--ink); }
+        .m7-title i{ color:var(--purple); }
+        .m7-stamp{ font-size:.78rem;color:var(--muted); }
+        .m7-grid{ display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px; }
+        .q-card{ background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center;
+            transition:transform .2s ease,box-shadow .2s ease; }
+        .q-card:hover{ transform:translateY(-3px);box-shadow:0 8px 18px rgba(32,90,120,.12); }
+        .q-name{ font-size:.92rem;font-weight:700;color:var(--ink); }
+        .q-sym{ font-size:.7rem;color:var(--muted);letter-spacing:.5px;margin-top:2px; }
+        .q-price{ font-size:1.25rem;font-weight:800;color:var(--ink);margin:8px 0 3px;font-variant-numeric:tabular-nums; }
+        .q-chg{ font-size:.8rem;font-weight:700;font-variant-numeric:tabular-nums; }
+        .q-up{ color:#e5534b; }
+        .q-down{ color:#12a06a; }
+        .q-flat{ color:var(--muted); }
+        .m7-foot{ display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;
+            margin-top:16px;padding-top:14px;border-top:1px dashed var(--line); }
+        .m7-note{ font-size:.76rem;color:var(--muted); }
+        .m7-more{ display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:.82rem;font-weight:700;
+            color:#fff;background:var(--purple);padding:8px 16px;border-radius:50px;
+            transition:filter .2s ease,transform .2s ease; }
+        .m7-more:hover{ filter:brightness(1.08);transform:translateY(-2px); }
+
         /* ===== Responsive ===== */
         @media (max-width:720px){
             body{ padding:10px; }
@@ -295,6 +349,12 @@
             .tl-label{ flex-basis:60px;font-size:.74rem; }
             .social-links{ gap:10px; }
             .social-links a{ min-width:60px;padding:8px 6px; }
+            .m7{ padding:14px; }
+            .m7-grid{ grid-template-columns:repeat(2,1fr); }
+            .nq{ padding:14px; }
+            .nq-filters{ align-items:flex-start; }
+            .nq-price b{ font-size:1.4rem; }
+            .nq-plot{ height:210px; }
         }
         @media (max-width:420px){
             .title{ font-size:.95rem; }
@@ -317,7 +377,7 @@
             <h1 data-page-node-id="mpTkGaqHttwj1uDzMQ3yzA">fanslee李范思</h1>
             <p class="title" data-page-node-id="VGJ2CYM6kEEgXOMgdyzoDD">你的美股好搭子</p>
             <p class="lead-sub" data-page-node-id="BNC59vaGz6RHyMHXrHRzkZ">从零开始，用一张图、一段话讲清楚美股入门最常见的 6 个问题。</p>
-            <!--<div class="social-links">
+            <div class="social-links">
                 <a href="https://fanslee.com/btc" target="_blank">
                     <div class="social-icon"><i class="fas fa-coins"></i></div>
                     <span class="link-text">币圈</span>
@@ -338,7 +398,7 @@
                     <div class="social-icon"><i class="fas fa-robot"></i></div>
                     <span class="link-text">AI</span>
                 </a>
-            </div>-->
+            </div>
         </header>
 
         <!-- ============ STICKY NAV ============ -->
@@ -417,6 +477,67 @@
                     <div class="callout tip" data-page-node-id="a1zaw7eLrSMZ0SIiLfnmWL">
                         <i class="fas fa-lightbulb" data-page-node-id="MxLDtenpyLHiBzAYhBFRxB"></i>
                         <div data-page-node-id="GmohvY1yNvg2X8CVsjHtpC"><strong data-page-node-id="gHwQyIGIucwypr10U743EZ">小白划重点</strong>最直观的三点差异：美股没有涨跌停但会熔断、1 股就能买、交易时段正好是中国的深夜；A 股有涨跌停且 T+1；港股 T+0 可当天买卖。</div>
+                    </div>
+
+                    <div class="nq" id="nqBoard">
+                        <div class="nq-head">
+                            <div>
+                                <div class="nq-title"><i class="fas fa-chart-area"></i>纳斯达克指数 · 实时走势</div>
+                                <div class="nq-price" id="nqPrice"><b>--</b><span class="q-flat">加载中…</span></div>
+                            </div>
+                            <div class="nq-filters">
+                                <div class="nq-frow">
+                                    <span class="nq-label">指数</span>
+                                    <div class="nq-tabs" id="nqIndexTabs">
+                                        <button class="nq-tab active" data-index="IXIC">纳斯达克综合</button>
+                                        <button class="nq-tab" data-index="NDX">纳斯达克100</button>
+                                    </div>
+                                </div>
+                                <div class="nq-frow">
+                                    <span class="nq-label">区间</span>
+                                    <div class="nq-tabs" id="nqRangeTabs">
+                                        <button class="nq-tab" data-range="1d">分时</button>
+                                        <button class="nq-tab" data-range="5d">5日</button>
+                                        <button class="nq-tab active" data-range="1m">1月</button>
+                                        <button class="nq-tab" data-range="3m">3月</button>
+                                        <button class="nq-tab" data-range="1y">1年</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nq-plot" id="nqPlot">
+                            <div class="nq-loading" id="nqLoading">正在加载行情…</div>
+                            <div class="nq-tip" id="nqTip"></div>
+                        </div>
+                        <div class="nq-foot">
+                            <div class="nq-note">数据源：新浪财经 · 美股延时行情，盘后显示最近收盘走势；鼠标移到曲线可查看当日点位。</div>
+                            <a href="https://finance.sina.com.cn/stock/usstock/" target="_blank" rel="noopener" class="m7-more">更多 · 新浪财经 <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="m7" id="m7Board">
+                        <div class="m7-head">
+                            <div class="m7-title"><i class="fas fa-chart-line"></i>美股七姐妹 + 热门关注 · 实时行情</div>
+                            <div class="m7-stamp" id="m7Stamp">行情加载中…</div>
+                        </div>
+                        <div class="m7-grid" id="m7Grid">
+                            <div class="q-card" data-sym="AAPL"><div class="q-name">苹果</div><div class="q-sym">AAPL</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="MSFT"><div class="q-name">微软</div><div class="q-sym">MSFT</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="NVDA"><div class="q-name">英伟达</div><div class="q-sym">NVDA</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="GOOGL"><div class="q-name">谷歌</div><div class="q-sym">GOOGL</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="AMZN"><div class="q-name">亚马逊</div><div class="q-sym">AMZN</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="META"><div class="q-name">Meta</div><div class="q-sym">META</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="TSLA"><div class="q-name">特斯拉</div><div class="q-sym">TSLA</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="SPCX"><div class="q-name">SpaceX</div><div class="q-sym">SPCX</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="BIDU"><div class="q-name">百度</div><div class="q-sym">BIDU</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="TCEHY"><div class="q-name">腾讯控股</div><div class="q-sym">TCEHY · ADR</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="FFAI"><div class="q-name">法拉第未来</div><div class="q-sym">FFAI</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                            <div class="q-card" data-sym="FFR"><div class="q-name">FF 机器人生态</div><div class="q-sym">FFR</div><div class="q-price">--</div><div class="q-chg">--</div></div>
+                        </div>
+                        <div class="m7-foot">
+                            <div class="m7-note"><i class="fas fa-clock" style="margin-right:4px"></i>数据源：腾讯证券 · 延时行情，涨跌以 <b style="color:#e5534b">红涨</b> / <b style="color:#12a06a">绿跌</b> 显示；交易时段外显示最近收盘价。仅供参考，不构成投资建议。</div>
+                            <a href="https://gu.qq.com/" target="_blank" rel="noopener" class="m7-more">更多行情 · 腾讯证券 <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -787,6 +908,180 @@
             onScroll();
 
             topBtn.addEventListener('click', function(){ window.scrollTo({ top:0, behavior:'smooth' }); });
+        })();
+
+        /* ===== 美股热门标的实时行情 ===== */
+        (function(){
+            var board = document.getElementById('m7Board');
+            if(!board) return;
+            var cards = Array.prototype.slice.call(board.querySelectorAll('.q-card'));
+            var stamp = document.getElementById('m7Stamp');
+            var syms  = cards.map(function(c){ return 'us' + c.getAttribute('data-sym'); });
+            var done  = false;
+
+            function paint(){
+                if(done) return;
+                var any = false, lastTime = '';
+                cards.forEach(function(c){
+                    var sym = 'us' + c.getAttribute('data-sym');
+                    var raw = window['v_' + sym];
+                    if(!raw) return;
+                    var f = String(raw).split('~');
+                    if(f.length < 33 || !f[3]) return;
+                    any = true;
+                    lastTime = f[30] || lastTime;
+                    var price = parseFloat(f[3]);
+                    var chg   = parseFloat(f[31]);
+                    var pct   = parseFloat(f[32]);
+                    var sign  = chg > 0 ? '+' : '';
+                    var priceEl = c.querySelector('.q-price');
+                    var chgEl   = c.querySelector('.q-chg');
+                    // 低价股（如 FFAI/FFR < $1）保留 3 位小数，避免四舍五入后显示 0.00
+                    var dec = price < 1 ? 3 : 2;
+                    priceEl.textContent = price.toFixed(dec);
+                    var cls = chg > 0 ? 'q-up' : (chg < 0 ? 'q-down' : 'q-flat');
+                    chgEl.className = 'q-chg ' + cls;
+                    chgEl.textContent = sign + chg.toFixed(dec) + ' (' + sign + pct.toFixed(2) + '%)';
+                });
+                if(any){
+                    done = true;
+                    stamp.textContent = lastTime ? ('截至 ' + lastTime + ' 美东') : '实时行情';
+                    stamp.style.color = 'var(--muted)';
+                }
+            }
+
+            function fail(){
+                if(done) return;
+                stamp.textContent = '行情暂不可用';
+                stamp.style.color = 'var(--red)';
+            }
+
+            var s = document.createElement('script');
+            s.charset = 'GBK';
+            s.src = 'https://qt.gtimg.cn/q=' + syms.join(',') + '&r=' + Date.now();
+            s.onload = paint;
+            s.onerror = fail;
+            document.head.appendChild(s);
+        })();
+
+        /* ===== 纳指实时走势图（数据源：新浪财经，JSONP 变量赋值） ===== */
+        (function(){
+            var board = document.getElementById('nqBoard');
+            if(!board) return;
+            var plot   = document.getElementById('nqPlot');
+            var tip    = document.getElementById('nqTip');
+            var loading= document.getElementById('nqLoading');
+            var priceEl= document.getElementById('nqPrice');
+            var index  = 'IXIC', range = '1m';
+            var cache  = {};
+            var seq    = 0;
+
+            function symbol(){ return index === 'IXIC' ? '.IXIC' : '.NDX'; }
+            function dayCount(){ return { '1m':22, '3m':66, '1y':250 }[range] || 22; }
+
+            function load(cb){
+                var key = index + '_' + range;
+                if(cache[key]) return cb(cache[key]);
+                loading.style.display = 'flex';
+                loading.textContent = '正在加载行情…';
+                var vn = 'sinaNQ' + (++seq);
+                var isMin = (range === '1d' || range === '5d');
+                var api = isMin ? 'US_MinKService.getMinK' : 'US_MinKService.getDailyK';
+                var url = 'https://stock.finance.sina.com.cn/usstock/api/jsonp_v2.php/var%20' + vn + '=/'
+                        + api + '?symbol=' + symbol()
+                        + (isMin ? '&type=' + (range === '1d' ? 1 : 5) : '')
+                        + '&___qn=3&r=' + Date.now();
+                var s = document.createElement('script');
+                s.charset = 'UTF-8';
+                s.src = url;
+                s.onload = function(){
+                    var raw = window[vn];
+                    var arr = Array.isArray(raw) ? raw : (raw && raw.data ? raw.data : null);
+                    if(!arr || !arr.length){ loading.textContent = '行情加载失败，请重试'; return; }
+                    if(!isMin) arr = arr.slice(-dayCount());
+                    cache[key] = arr;
+                    try{ delete window[vn]; }catch(e){ window[vn] = null; }
+                    cb(arr);
+                };
+                s.onerror = function(){ loading.textContent = '行情加载失败，请重试'; };
+                document.head.appendChild(s);
+            }
+
+            function render(arr){
+                loading.style.display = 'none';
+                var W = plot.clientWidth || 800, H = plot.clientHeight || 260;
+                var pad = { l:8, r:8, t:14, b:24 };
+                var pts = arr.map(function(d){ return { d:d.d, c:parseFloat(d.c) }; })
+                            .filter(function(p){ return isFinite(p.c); });
+                if(pts.length < 2){ loading.style.display='flex'; loading.textContent='数据不足'; return; }
+                var vals = pts.map(function(p){ return p.c; });
+                var vmin = Math.min.apply(null, vals), vmax = Math.max.apply(null, vals);
+                if(vmax === vmin){ vmax += 1; vmin -= 1; }
+                var first = vals[0], last = vals[vals.length-1];
+                var up = last >= first;
+                var color = up ? '#e5534b' : '#12a06a';
+                var X = function(i){ return pad.l + i*(W-pad.l-pad.r)/(pts.length-1); };
+                var Y = function(v){ return pad.t + (vmax-v)/(vmax-vmin)*(H-pad.t-pad.b); };
+
+                var line = pts.map(function(p,i){ return (i?'L':'M') + X(i).toFixed(1) + ' ' + Y(p.c).toFixed(1); }).join(' ');
+                var area = line + ' L' + X(pts.length-1).toFixed(1) + ' ' + (H-pad.b) + ' L' + X(0).toFixed(1) + ' ' + (H-pad.b) + ' Z';
+                var gid = 'nqGrad';
+                var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none">'
+                    + '<defs><linearGradient id="' + gid + '" x1="0" y1="0" x2="0" y2="1">'
+                    + '<stop offset="0%" stop-color="' + color + '" stop-opacity="0.26"/>'
+                    + '<stop offset="100%" stop-color="' + color + '" stop-opacity="0.02"/>'
+                    + '</linearGradient></defs>';
+                for(var g=1; g<=3; g++){
+                    var gy = pad.t + g*(H-pad.t-pad.b)/4;
+                    svg += '<line x1="' + pad.l + '" y1="' + gy.toFixed(1) + '" x2="' + (W-pad.r) + '" y2="' + gy.toFixed(1) + '" stroke="#e3edf5" stroke-width="1"/>';
+                }
+                svg += '<path d="' + area + '" fill="url(#' + gid + ')"/>'
+                    + '<path d="' + line + '" fill="none" stroke="' + color + '" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>'
+                    + '<circle cx="' + X(pts.length-1).toFixed(1) + '" cy="' + Y(last).toFixed(1) + '" r="3.5" fill="' + color + '" stroke="#fff" stroke-width="1.5"/>'
+                    + '<text x="' + pad.l + '" y="' + (H-6) + '" font-size="10" fill="#7b8ca3">' + esc(pts[0].d) + '</text>'
+                    + '<text x="' + (W-pad.r) + '" y="' + (H-6) + '" font-size="10" fill="#7b8ca3" text-anchor="end">' + esc(pts[pts.length-1].d) + '</text>'
+                    + '</svg>';
+                var old = plot.querySelector('svg');
+                if(old) old.remove();
+                plot.insertAdjacentHTML('afterbegin', svg);
+
+                var chg = last - first, pct = first ? chg/first*100 : 0;
+                var sign = chg > 0 ? '+' : '';
+                priceEl.innerHTML = '<b style="color:' + color + '">' + last.toFixed(2) + '</b>'
+                    + '<span style="color:' + color + '">' + sign + chg.toFixed(2) + ' (' + sign + pct.toFixed(2) + '%)</span>'
+                    + '<span style="font-size:.74rem;color:var(--muted);font-weight:500">' + (index==='IXIC'?'纳斯达克综合':'纳斯达克100') + ' · ' + esc(pts[pts.length-1].d) + '</span>';
+
+                var svgEl = plot.querySelector('svg');
+                svgEl.addEventListener('mousemove', function(e){
+                    var rect = svgEl.getBoundingClientRect();
+                    var x = (e.clientX - rect.left) / rect.width * W;
+                    var i = Math.round((x - pad.l) / (W-pad.l-pad.r) * (pts.length-1));
+                    if(i < 0) i = 0; if(i > pts.length-1) i = pts.length-1;
+                    var p = pts[i];
+                    tip.textContent = p.d + '  ' + p.c.toFixed(2);
+                    tip.style.left = (X(i)/W*100) + '%';
+                    tip.style.top  = (Y(p.c)/H*100) + '%';
+                    tip.style.opacity = 1;
+                });
+                svgEl.addEventListener('mouseleave', function(){ tip.style.opacity = 0; });
+            }
+
+            function esc(s){ return String(s).replace(/[<>&"]/g,function(c){ return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]; }); }
+            function refresh(){ load(render); }
+
+            document.getElementById('nqIndexTabs').addEventListener('click', function(e){
+                var b = e.target.closest('.nq-tab'); if(!b) return;
+                index = b.getAttribute('data-index');
+                Array.prototype.forEach.call(this.children, function(x){ x.classList.toggle('active', x===b); });
+                refresh();
+            });
+            document.getElementById('nqRangeTabs').addEventListener('click', function(e){
+                var b = e.target.closest('.nq-tab'); if(!b) return;
+                range = b.getAttribute('data-range');
+                Array.prototype.forEach.call(this.children, function(x){ x.classList.toggle('active', x===b); });
+                refresh();
+            });
+            refresh();
         })();
     </script>
 </body>
